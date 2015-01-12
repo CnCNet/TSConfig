@@ -77,6 +77,8 @@
             this.lblIntro = new System.Windows.Forms.Label();
             this.chkCD = new System.Windows.Forms.CheckBox();
             this.lblCD = new System.Windows.Forms.Label();
+            this.lblProcAffinity = new System.Windows.Forms.Label();
+            this.chkProcAffinity = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.trbScoreVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbVoiceVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbSoundVolume)).BeginInit();
@@ -84,8 +86,8 @@
             // 
             // cmbResolution
             // 
-            this.cmbResolution.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbResolution.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbResolution.FormattingEnabled = true;
             this.cmbResolution.Location = new System.Drawing.Point(152, 28);
@@ -105,7 +107,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnOK.Location = new System.Drawing.Point(12, 306);
+            this.btnOK.Location = new System.Drawing.Point(12, 321);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 43;
@@ -117,7 +119,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(212, 306);
+            this.btnCancel.Location = new System.Drawing.Point(212, 321);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 45;
@@ -147,8 +149,8 @@
             // 
             // lblUnitActionLines
             // 
-            this.lblUnitActionLines.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUnitActionLines.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUnitActionLines.Location = new System.Drawing.Point(274, 30);
             this.lblUnitActionLines.Name = "lblUnitActionLines";
             this.lblUnitActionLines.Size = new System.Drawing.Size(157, 39);
@@ -169,8 +171,8 @@
             // 
             // lblToolTips
             // 
-            this.lblToolTips.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblToolTips.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lblToolTips.Location = new System.Drawing.Point(274, 53);
             this.lblToolTips.Name = "lblToolTips";
             this.lblToolTips.Size = new System.Drawing.Size(157, 16);
@@ -182,7 +184,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 128);
+            this.label3.Location = new System.Drawing.Point(12, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 16;
@@ -190,9 +192,9 @@
             // 
             // lblRepeat
             // 
-            this.lblRepeat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRepeat.Location = new System.Drawing.Point(22, 152);
+            this.lblRepeat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRepeat.Location = new System.Drawing.Point(22, 171);
             this.lblRepeat.Name = "lblRepeat";
             this.lblRepeat.Size = new System.Drawing.Size(92, 14);
             this.lblRepeat.TabIndex = 17;
@@ -203,7 +205,7 @@
             // chkRepeat
             // 
             this.chkRepeat.AutoSize = true;
-            this.chkRepeat.Location = new System.Drawing.Point(152, 151);
+            this.chkRepeat.Location = new System.Drawing.Point(152, 170);
             this.chkRepeat.Name = "chkRepeat";
             this.chkRepeat.Size = new System.Drawing.Size(29, 17);
             this.chkRepeat.TabIndex = 18;
@@ -213,7 +215,7 @@
             // chkShuffle
             // 
             this.chkShuffle.AutoSize = true;
-            this.chkShuffle.Location = new System.Drawing.Point(152, 173);
+            this.chkShuffle.Location = new System.Drawing.Point(152, 192);
             this.chkShuffle.Name = "chkShuffle";
             this.chkShuffle.Size = new System.Drawing.Size(29, 17);
             this.chkShuffle.TabIndex = 20;
@@ -222,9 +224,9 @@
             // 
             // lblShuffle
             // 
-            this.lblShuffle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblShuffle.Location = new System.Drawing.Point(22, 173);
+            this.lblShuffle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblShuffle.Location = new System.Drawing.Point(22, 192);
             this.lblShuffle.Name = "lblShuffle";
             this.lblShuffle.Size = new System.Drawing.Size(75, 15);
             this.lblShuffle.TabIndex = 19;
@@ -235,7 +237,7 @@
             // line1
             // 
             this.line1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line1.Location = new System.Drawing.Point(15, 112);
+            this.line1.Location = new System.Drawing.Point(15, 135);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(393, 3);
             this.line1.TabIndex = 15;
@@ -243,7 +245,7 @@
             // btnApply
             // 
             this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnApply.Location = new System.Drawing.Point(113, 306);
+            this.btnApply.Location = new System.Drawing.Point(113, 321);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
             this.btnApply.TabIndex = 44;
@@ -253,10 +255,10 @@
             // 
             // trbScoreVolume
             // 
-            this.trbScoreVolume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trbScoreVolume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.trbScoreVolume.AutoSize = false;
-            this.trbScoreVolume.Location = new System.Drawing.Point(144, 191);
+            this.trbScoreVolume.Location = new System.Drawing.Point(144, 210);
             this.trbScoreVolume.Maximum = 20;
             this.trbScoreVolume.Name = "trbScoreVolume";
             this.trbScoreVolume.Size = new System.Drawing.Size(77, 27);
@@ -267,7 +269,7 @@
             // lblScoreVolume
             // 
             this.lblScoreVolume.AutoSize = true;
-            this.lblScoreVolume.Location = new System.Drawing.Point(22, 196);
+            this.lblScoreVolume.Location = new System.Drawing.Point(22, 215);
             this.lblScoreVolume.Name = "lblScoreVolume";
             this.lblScoreVolume.Size = new System.Drawing.Size(75, 13);
             this.lblScoreVolume.TabIndex = 21;
@@ -276,7 +278,7 @@
             // lblScoreVolumeValue
             // 
             this.lblScoreVolumeValue.AutoSize = true;
-            this.lblScoreVolumeValue.Location = new System.Drawing.Point(219, 191);
+            this.lblScoreVolumeValue.Location = new System.Drawing.Point(219, 210);
             this.lblScoreVolumeValue.Name = "lblScoreVolumeValue";
             this.lblScoreVolumeValue.Size = new System.Drawing.Size(27, 13);
             this.lblScoreVolumeValue.TabIndex = 23;
@@ -284,10 +286,10 @@
             // 
             // trbVoiceVolume
             // 
-            this.trbVoiceVolume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trbVoiceVolume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.trbVoiceVolume.AutoSize = false;
-            this.trbVoiceVolume.Location = new System.Drawing.Point(144, 219);
+            this.trbVoiceVolume.Location = new System.Drawing.Point(144, 238);
             this.trbVoiceVolume.Maximum = 20;
             this.trbVoiceVolume.Name = "trbVoiceVolume";
             this.trbVoiceVolume.Size = new System.Drawing.Size(77, 27);
@@ -298,7 +300,7 @@
             // lblVoiceVolume
             // 
             this.lblVoiceVolume.AutoSize = true;
-            this.lblVoiceVolume.Location = new System.Drawing.Point(22, 224);
+            this.lblVoiceVolume.Location = new System.Drawing.Point(22, 243);
             this.lblVoiceVolume.Name = "lblVoiceVolume";
             this.lblVoiceVolume.Size = new System.Drawing.Size(79, 13);
             this.lblVoiceVolume.TabIndex = 24;
@@ -307,7 +309,7 @@
             // lblVoiceVolumeValue
             // 
             this.lblVoiceVolumeValue.AutoSize = true;
-            this.lblVoiceVolumeValue.Location = new System.Drawing.Point(219, 221);
+            this.lblVoiceVolumeValue.Location = new System.Drawing.Point(219, 240);
             this.lblVoiceVolumeValue.Name = "lblVoiceVolumeValue";
             this.lblVoiceVolumeValue.Size = new System.Drawing.Size(27, 13);
             this.lblVoiceVolumeValue.TabIndex = 26;
@@ -315,10 +317,10 @@
             // 
             // trbSoundVolume
             // 
-            this.trbSoundVolume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trbSoundVolume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.trbSoundVolume.AutoSize = false;
-            this.trbSoundVolume.Location = new System.Drawing.Point(144, 247);
+            this.trbSoundVolume.Location = new System.Drawing.Point(144, 266);
             this.trbSoundVolume.Maximum = 20;
             this.trbSoundVolume.Name = "trbSoundVolume";
             this.trbSoundVolume.Size = new System.Drawing.Size(77, 27);
@@ -329,7 +331,7 @@
             // lblSoundVolume
             // 
             this.lblSoundVolume.AutoSize = true;
-            this.lblSoundVolume.Location = new System.Drawing.Point(22, 252);
+            this.lblSoundVolume.Location = new System.Drawing.Point(22, 271);
             this.lblSoundVolume.Name = "lblSoundVolume";
             this.lblSoundVolume.Size = new System.Drawing.Size(78, 13);
             this.lblSoundVolume.TabIndex = 27;
@@ -338,7 +340,7 @@
             // lblSoundVolumeValue
             // 
             this.lblSoundVolumeValue.AutoSize = true;
-            this.lblSoundVolumeValue.Location = new System.Drawing.Point(219, 249);
+            this.lblSoundVolumeValue.Location = new System.Drawing.Point(219, 268);
             this.lblSoundVolumeValue.Name = "lblSoundVolumeValue";
             this.lblSoundVolumeValue.Size = new System.Drawing.Size(27, 13);
             this.lblSoundVolumeValue.TabIndex = 29;
@@ -347,15 +349,15 @@
             // Line2
             // 
             this.Line2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Line2.Location = new System.Drawing.Point(252, 40);
+            this.Line2.Location = new System.Drawing.Point(252, 29);
             this.Line2.Name = "Line2";
-            this.Line2.Size = new System.Drawing.Size(3, 250);
+            this.Line2.Size = new System.Drawing.Size(3, 270);
             this.Line2.TabIndex = 7;
             // 
             // GraphicPatchLabel
             // 
             this.GraphicPatchLabel.AutoSize = true;
-            this.GraphicPatchLabel.Location = new System.Drawing.Point(261, 128);
+            this.GraphicPatchLabel.Location = new System.Drawing.Point(261, 147);
             this.GraphicPatchLabel.Name = "GraphicPatchLabel";
             this.GraphicPatchLabel.Size = new System.Drawing.Size(56, 13);
             this.GraphicPatchLabel.TabIndex = 30;
@@ -363,9 +365,9 @@
             // 
             // GP_DisabledLabel
             // 
-            this.GP_DisabledLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GP_DisabledLabel.Location = new System.Drawing.Point(274, 153);
+            this.GP_DisabledLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.GP_DisabledLabel.Location = new System.Drawing.Point(274, 172);
             this.GP_DisabledLabel.Name = "GP_DisabledLabel";
             this.GP_DisabledLabel.Size = new System.Drawing.Size(157, 19);
             this.GP_DisabledLabel.TabIndex = 31;
@@ -375,9 +377,9 @@
             // 
             // GP_IEddrawLabel
             // 
-            this.GP_IEddrawLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GP_IEddrawLabel.Location = new System.Drawing.Point(274, 200);
+            this.GP_IEddrawLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.GP_IEddrawLabel.Location = new System.Drawing.Point(274, 219);
             this.GP_IEddrawLabel.Name = "GP_IEddrawLabel";
             this.GP_IEddrawLabel.Size = new System.Drawing.Size(157, 13);
             this.GP_IEddrawLabel.TabIndex = 35;
@@ -387,9 +389,9 @@
             // 
             // GP_ddwrapperLabel
             // 
-            this.GP_ddwrapperLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GP_ddwrapperLabel.Location = new System.Drawing.Point(274, 222);
+            this.GP_ddwrapperLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.GP_ddwrapperLabel.Location = new System.Drawing.Point(274, 241);
             this.GP_ddwrapperLabel.Name = "GP_ddwrapperLabel";
             this.GP_ddwrapperLabel.Size = new System.Drawing.Size(157, 15);
             this.GP_ddwrapperLabel.TabIndex = 37;
@@ -400,7 +402,7 @@
             // GP_DisabledRadioButton
             // 
             this.GP_DisabledRadioButton.AutoSize = true;
-            this.GP_DisabledRadioButton.Location = new System.Drawing.Point(404, 153);
+            this.GP_DisabledRadioButton.Location = new System.Drawing.Point(404, 172);
             this.GP_DisabledRadioButton.Name = "GP_DisabledRadioButton";
             this.GP_DisabledRadioButton.Size = new System.Drawing.Size(14, 13);
             this.GP_DisabledRadioButton.TabIndex = 32;
@@ -410,7 +412,7 @@
             // GP_IEddrawRadioButton
             // 
             this.GP_IEddrawRadioButton.AutoSize = true;
-            this.GP_IEddrawRadioButton.Location = new System.Drawing.Point(404, 200);
+            this.GP_IEddrawRadioButton.Location = new System.Drawing.Point(404, 219);
             this.GP_IEddrawRadioButton.Name = "GP_IEddrawRadioButton";
             this.GP_IEddrawRadioButton.Size = new System.Drawing.Size(14, 13);
             this.GP_IEddrawRadioButton.TabIndex = 36;
@@ -420,7 +422,7 @@
             // GP_ddwrapperRadioButton
             // 
             this.GP_ddwrapperRadioButton.AutoSize = true;
-            this.GP_ddwrapperRadioButton.Location = new System.Drawing.Point(404, 222);
+            this.GP_ddwrapperRadioButton.Location = new System.Drawing.Point(404, 241);
             this.GP_ddwrapperRadioButton.Name = "GP_ddwrapperRadioButton";
             this.GP_ddwrapperRadioButton.Size = new System.Drawing.Size(14, 13);
             this.GP_ddwrapperRadioButton.TabIndex = 38;
@@ -432,7 +434,7 @@
             // 
             this.GP_NoVideoMemoryCheckBox.AutoSize = true;
             this.GP_NoVideoMemoryCheckBox.Enabled = false;
-            this.GP_NoVideoMemoryCheckBox.Location = new System.Drawing.Point(404, 243);
+            this.GP_NoVideoMemoryCheckBox.Location = new System.Drawing.Point(404, 262);
             this.GP_NoVideoMemoryCheckBox.Name = "GP_NoVideoMemoryCheckBox";
             this.GP_NoVideoMemoryCheckBox.Size = new System.Drawing.Size(29, 17);
             this.GP_NoVideoMemoryCheckBox.TabIndex = 40;
@@ -441,9 +443,9 @@
             // 
             // GP_NoVideoMemoryLabel
             // 
-            this.GP_NoVideoMemoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GP_NoVideoMemoryLabel.Location = new System.Drawing.Point(274, 244);
+            this.GP_NoVideoMemoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.GP_NoVideoMemoryLabel.Location = new System.Drawing.Point(274, 263);
             this.GP_NoVideoMemoryLabel.Name = "GP_NoVideoMemoryLabel";
             this.GP_NoVideoMemoryLabel.Size = new System.Drawing.Size(159, 18);
             this.GP_NoVideoMemoryLabel.TabIndex = 39;
@@ -455,7 +457,7 @@
             // 
             this.GP_FakeVsyncCheckBox.AutoSize = true;
             this.GP_FakeVsyncCheckBox.Enabled = false;
-            this.GP_FakeVsyncCheckBox.Location = new System.Drawing.Point(404, 265);
+            this.GP_FakeVsyncCheckBox.Location = new System.Drawing.Point(404, 284);
             this.GP_FakeVsyncCheckBox.Name = "GP_FakeVsyncCheckBox";
             this.GP_FakeVsyncCheckBox.Size = new System.Drawing.Size(29, 17);
             this.GP_FakeVsyncCheckBox.TabIndex = 42;
@@ -464,9 +466,9 @@
             // 
             // GP_FakeVsyncLabel
             // 
-            this.GP_FakeVsyncLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GP_FakeVsyncLabel.Location = new System.Drawing.Point(274, 266);
+            this.GP_FakeVsyncLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.GP_FakeVsyncLabel.Location = new System.Drawing.Point(274, 285);
             this.GP_FakeVsyncLabel.Name = "GP_FakeVsyncLabel";
             this.GP_FakeVsyncLabel.Size = new System.Drawing.Size(157, 16);
             this.GP_FakeVsyncLabel.TabIndex = 41;
@@ -476,7 +478,7 @@
             // GP_TSDDrawRadioButton
             // 
             this.GP_TSDDrawRadioButton.AutoSize = true;
-            this.GP_TSDDrawRadioButton.Location = new System.Drawing.Point(404, 175);
+            this.GP_TSDDrawRadioButton.Location = new System.Drawing.Point(404, 194);
             this.GP_TSDDrawRadioButton.Name = "GP_TSDDrawRadioButton";
             this.GP_TSDDrawRadioButton.Size = new System.Drawing.Size(14, 13);
             this.GP_TSDDrawRadioButton.TabIndex = 34;
@@ -485,9 +487,9 @@
             // 
             // GP_TSDDrawLabel
             // 
-            this.GP_TSDDrawLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GP_TSDDrawLabel.Location = new System.Drawing.Point(274, 175);
+            this.GP_TSDDrawLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.GP_TSDDrawLabel.Location = new System.Drawing.Point(274, 194);
             this.GP_TSDDrawLabel.Name = "GP_TSDDrawLabel";
             this.GP_TSDDrawLabel.Size = new System.Drawing.Size(157, 15);
             this.GP_TSDDrawLabel.TabIndex = 33;
@@ -507,8 +509,8 @@
             // 
             // lblWindowed
             // 
-            this.lblWindowed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWindowed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWindowed.Location = new System.Drawing.Point(22, 56);
             this.lblWindowed.Name = "lblWindowed";
             this.lblWindowed.Size = new System.Drawing.Size(145, 14);
@@ -528,8 +530,8 @@
             // 
             // lblBackbuffer
             // 
-            this.lblBackbuffer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBackbuffer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBackbuffer.Location = new System.Drawing.Point(22, 77);
             this.lblBackbuffer.Name = "lblBackbuffer";
             this.lblBackbuffer.Size = new System.Drawing.Size(145, 14);
@@ -560,8 +562,8 @@
             // 
             // lblIntro
             // 
-            this.lblIntro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblIntro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIntro.Location = new System.Drawing.Point(274, 72);
             this.lblIntro.Name = "lblIntro";
             this.lblIntro.Size = new System.Drawing.Size(157, 14);
@@ -582,13 +584,33 @@
             // 
             // lblCD
             // 
-            this.lblCD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCD.Location = new System.Drawing.Point(274, 92);
             this.lblCD.Name = "lblCD";
             this.lblCD.Size = new System.Drawing.Size(157, 14);
             this.lblCD.TabIndex = 46;
             this.lblCD.Text = "No CD:";
+            // 
+            // lblProcAffinity
+            // 
+            this.lblProcAffinity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblProcAffinity.Location = new System.Drawing.Point(274, 112);
+            this.lblProcAffinity.Name = "lblProcAffinity";
+            this.lblProcAffinity.Size = new System.Drawing.Size(123, 14);
+            this.lblProcAffinity.TabIndex = 48;
+            this.lblProcAffinity.Text = "Single Processor Affinity:";
+            // 
+            // chkProcAffinity
+            // 
+            this.chkProcAffinity.AutoSize = true;
+            this.chkProcAffinity.Location = new System.Drawing.Point(404, 112);
+            this.chkProcAffinity.Name = "chkProcAffinity";
+            this.chkProcAffinity.Size = new System.Drawing.Size(29, 17);
+            this.chkProcAffinity.TabIndex = 49;
+            this.chkProcAffinity.Text = " ";
+            this.chkProcAffinity.UseVisualStyleBackColor = true;
             // 
             // SetupFrame
             // 
@@ -596,7 +618,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(432, 341);
+            this.ClientSize = new System.Drawing.Size(432, 356);
+            this.Controls.Add(this.chkProcAffinity);
+            this.Controls.Add(this.lblProcAffinity);
             this.Controls.Add(this.chkCD);
             this.Controls.Add(this.lblCD);
             this.Controls.Add(this.chkIntro);
@@ -710,6 +734,8 @@
         private System.Windows.Forms.Label lblIntro;
         private System.Windows.Forms.CheckBox chkCD;
         private System.Windows.Forms.Label lblCD;
+        private System.Windows.Forms.Label lblProcAffinity;
+        private System.Windows.Forms.CheckBox chkProcAffinity;
     }
 }
 

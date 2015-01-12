@@ -40,6 +40,7 @@ namespace gui
             chkBackbuffer.Checked = DomainController.Instance().getBackbuffer();
             chkIntro.Checked = DomainController.Instance().getIntro();
             chkCD.Checked = DomainController.Instance().getCD();
+            chkProcAffinity.Checked = DomainController.Instance().getProcAffinity();
             trbScoreVolume.Value = Convert.ToInt32(DomainController.Instance().getScoreVolume() * 20);
             trbVoiceVolume.Value = Convert.ToInt32(DomainController.Instance().getVoiceVolume() * 20);
             trbSoundVolume.Value = Convert.ToInt32(DomainController.Instance().getSoundVolume() * 20);
@@ -122,6 +123,7 @@ namespace gui
             Boolean videoWindowed = chkWindowed.Checked;
             Boolean Backbuffer = chkBackbuffer.Checked;
             Boolean CD = chkCD.Checked;
+            Boolean procAffinity = chkProcAffinity.Checked;
             Boolean Intro = chkIntro.Checked;
             Double musicVolume = Convert.ToDouble(trbScoreVolume.Value) / 20.0;
             Double voiceVolume = Convert.ToDouble(trbVoiceVolume.Value) / 20.0;
@@ -133,7 +135,7 @@ namespace gui
             bool _GP_NoVideoMemory = GP_NoVideoMemoryCheckBox.Checked;
             bool _GP_FakeVsync = GP_FakeVsyncCheckBox.Checked;
 
-            return DomainController.Instance().saveSettings(width, height, unitActionLines, tooltips, videoWindowed, Backbuffer, Intro, CD, musicRepeat, musicShuffle, musicVolume, voiceVolume, soundVolume, _GP_IEddraw, _GP_ddwrapper, _GP_NoVideoMemory, _GP_FakeVsync, _GP_TSDDraw);
+            return DomainController.Instance().saveSettings(width, height, unitActionLines, tooltips, videoWindowed, Backbuffer, Intro, CD, musicRepeat, musicShuffle, musicVolume, voiceVolume, soundVolume, _GP_IEddraw, _GP_ddwrapper, _GP_NoVideoMemory, _GP_FakeVsync, _GP_TSDDraw, procAffinity);
         }
 
         private void lblUnitActionLines_Click(object sender, EventArgs e)

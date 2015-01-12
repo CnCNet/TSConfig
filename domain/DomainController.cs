@@ -83,12 +83,17 @@ namespace tsconfig.domain
 
         public Boolean getBackbuffer()
         {
-            return SUN_ini.getBoolValue("Video", "UseGraphicsPatch", false);
+            return SUN_ini.getBoolValue("Video", "UseGraphicsPatch", true);
         }
 
         public Boolean getCD()
         {
-            return SUN_ini.getBoolValue("Options", "NoCD", false);
+            return SUN_ini.getBoolValue("Options", "NoCD", true);
+        }
+
+        public Boolean getProcAffinity()
+        {
+            return SUN_ini.getBoolValue("Options", "SingleProcAffinity", true);
         }
 
         public Boolean getMusicRepeat()
@@ -192,7 +197,7 @@ namespace tsconfig.domain
             return ddwrapperCfg.getBoolValue("ddraw", "FakeVsync", false);
         }
 
-        public Boolean saveSettings(int width, int height, Boolean unitActionLines, Boolean tooltips, Boolean videoWindowed, bool Backbuffer, Boolean Intro, bool CD, Boolean musicRepeat, Boolean musicShuffle, Double musicVolume, Double voiceVolume, Double soundVolume, bool _GP_IEddraw, bool _GP_ddwrapper, bool _GP_NoVideoMemory, bool _GP_FakeVsync, bool _GP_TSDDraw)
+        public Boolean saveSettings(int width, int height, Boolean unitActionLines, Boolean tooltips, Boolean videoWindowed, bool Backbuffer, Boolean Intro, bool CD, Boolean musicRepeat, Boolean musicShuffle, Double musicVolume, Double voiceVolume, Double soundVolume, bool _GP_IEddraw, bool _GP_ddwrapper, bool _GP_NoVideoMemory, bool _GP_FakeVsync, bool _GP_TSDDraw, bool procAffinity)
         {
             Boolean allOk = true;
             // INI SETTINGS
@@ -204,6 +209,8 @@ namespace tsconfig.domain
             SUN_ini.setBoolValue("Video", "Video.Windowed", videoWindowed);
             SUN_ini.setBoolValue("Video", "UseGraphicsPatch", Backbuffer);
             SUN_ini.setBoolValue("Options", "NoCD", CD);
+            SUN_ini.setBoolValue("Options", "SingleProcAffinity", procAffinity);
+
             SUN_ini.setBoolValue("Options", "ToolTips", tooltips);
             SUN_ini.setBoolValue("Audio", "IsScoreRepeat", musicRepeat);
             SUN_ini.setBoolValue("Audio", "IsScoreShuffle", musicShuffle);
