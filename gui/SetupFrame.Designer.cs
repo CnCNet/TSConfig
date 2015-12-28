@@ -79,6 +79,9 @@
             this.lblCD = new System.Windows.Forms.Label();
             this.lblProcAffinity = new System.Windows.Forms.Label();
             this.chkProcAffinity = new System.Windows.Forms.CheckBox();
+            this.btnColorSchemeEditor = new System.Windows.Forms.Button();
+            this.lblUseCustomColors = new System.Windows.Forms.Label();
+            this.chkUseCustomColors = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.trbScoreVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbVoiceVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbSoundVolume)).BeginInit();
@@ -611,6 +614,34 @@
             this.chkProcAffinity.TabIndex = 49;
             this.chkProcAffinity.Text = " ";
             this.chkProcAffinity.UseVisualStyleBackColor = true;
+            //
+            // btnColorSchemeEditor
+            //
+            this.btnColorSchemeEditor.Location = new System.Drawing.Point(170, 98);
+            this.btnColorSchemeEditor.Name = "btnColorSchemeEditor";
+            this.btnColorSchemeEditor.Size = new System.Drawing.Size(76, 22);
+            this.btnColorSchemeEditor.TabIndex = 50;
+            this.btnColorSchemeEditor.Text = "Edit Colors";
+            this.btnColorSchemeEditor.Click += new System.EventHandler(this.btnColorSchemeEditor_Click);
+            //
+            // lblUseCustomColors
+            //
+            this.lblUseCustomColors.Location = new System.Drawing.Point(22, 98);
+            this.lblUseCustomColors.Name = "lblUseCustomColors";
+            this.lblUseCustomColors.Size = new System.Drawing.Size(145, 14);
+            this.lblUseCustomColors.TabIndex = 51;
+            this.lblUseCustomColors.Text = "Use Custom Colors:";
+            this.lblUseCustomColors.Click += new System.EventHandler(this.lblUseCustomColors_Click);
+            this.lblUseCustomColors.DoubleClick += new System.EventHandler(this.lblUseCustomColors_Click);
+            //
+            // chkUseCustomColors
+            //
+            this.chkUseCustomColors.Location = new System.Drawing.Point(152, 98);
+            this.chkUseCustomColors.Name = "chkUseCustomColors";
+            this.chkUseCustomColors.Size = new System.Drawing.Size(29,17);
+            this.chkUseCustomColors.TabIndex = 52;
+            this.chkUseCustomColors.Text = " ";
+            this.chkUseCustomColors.UseVisualStyleBackColor = true;
             // 
             // SetupFrame
             // 
@@ -669,8 +700,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbResolution);
             this.Controls.Add(this.lblUnitActionLines);
+            this.Controls.Add(this.btnColorSchemeEditor);
+            this.Controls.Add(this.chkUseCustomColors);
+            this.Controls.Add(this.lblUseCustomColors);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            try
+            { // Workaround for now because mono can't seem to compile this right
+                this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            } catch (System.Exception) { }
             this.MaximizeBox = false;
             this.Name = "SetupFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -736,6 +773,9 @@
         private System.Windows.Forms.Label lblCD;
         private System.Windows.Forms.Label lblProcAffinity;
         private System.Windows.Forms.CheckBox chkProcAffinity;
+        private System.Windows.Forms.Button btnColorSchemeEditor;
+        private System.Windows.Forms.Label lblUseCustomColors;
+        private System.Windows.Forms.CheckBox chkUseCustomColors;
     }
 }
 
