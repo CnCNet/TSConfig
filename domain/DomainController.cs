@@ -133,6 +133,27 @@ namespace tsconfig.domain
             return name;
         }
 
+        public Boolean getOverrideColors()
+        {
+            return SUN_ini.getBoolValue("Options", "OverrideColors", false);
+        }
+
+        public int getTextBackgroundColor()
+        {
+            return SUN_ini.getIntValue("Options", "TextBackgroundColor", 0);
+        }
+
+        public WWColor[] getColorOverrides()
+        {
+            WWColor[] c = new WWColor[8];
+            for (int i = 0; i < 8; i++)
+            {
+                int t = SUN_ini.getIntValue("ColorOverrides",string.Format("Color{0}",i),-1);
+                if (t > 0)
+                    c[i] = WWColor.ByIndex(t);
+            }
+            return c;
+        }
         private string setDefaultName(String name)
         {
             if (name.Equals(String.Empty))
@@ -197,7 +218,7 @@ namespace tsconfig.domain
             return ddwrapperCfg.getBoolValue("ddraw", "FakeVsync", false);
         }
 
-        public Boolean saveSettings(int width, int height, Boolean unitActionLines, Boolean tooltips, Boolean videoWindowed, bool Backbuffer, Boolean Intro, bool CD, Boolean musicRepeat, Boolean musicShuffle, Double musicVolume, Double voiceVolume, Double soundVolume, bool _GP_IEddraw, bool _GP_ddwrapper, bool _GP_NoVideoMemory, bool _GP_FakeVsync, bool _GP_TSDDraw, bool procAffinity)
+        public Boolean saveSettings(int width, int height, Boolean unitActionLines, Boolean tooltips, Boolean videoWindowed, bool Backbuffer, Boolean Intro, bool CD, Boolean musicRepeat, Boolean musicShuffle, Double musicVolume, Double voiceVolume, Double soundVolume, bool _GP_IEddraw, bool _GP_ddwrapper, bool _GP_NoVideoMemory, bool _GP_FakeVsync, bool _GP_TSDDraw, bool procAffinity, WWColor[] ColorOverrides, Boolean OverrideColors, int TextBackgroundColor)
         {
             Boolean allOk = true;
             // INI SETTINGS
@@ -222,6 +243,15 @@ namespace tsconfig.domain
 
             SUN_ini.setIntValue("Video", "ScreenWidth", width, false);
             SUN_ini.setIntValue("Video", "ScreenHeight", height, false);
+
+            for (int i = 0; i < ColorOverrides.Length; i++)
+            {
+                if (ColorOverrides[i] != null)
+                    SUN_ini.setIntValue("ColorOverrides",string.Format("Color{0}",i),ColorOverrides[i].Index);
+            }
+
+            SUN_ini.setIntValue("Options","TextBackgroundColor", TextBackgroundColor);
+            SUN_ini.setBoolValue("Options","OverrideColors", OverrideColors);
 
             if (!File.Exists(ProgramConstants.gamepath + ProgramConstants.GAME_SETTINGS))
                 GameFileManagement.WriteSunIni();

@@ -27,11 +27,21 @@ namespace gui
 
         private void loadSettings()
         {
-            List<String> resolutions = screenres.ScreenResolutionOperations.getScreenResolutions(640, 400, 16);
+            List<String> resolutions;
             String resolution = DomainController.Instance().getCurrentGameRes();
+            try
+            {
+                resolutions = screenres.ScreenResolutionOperations.getScreenResolutions(640, 400, 16);
+            }
+            catch (System.EntryPointNotFoundException)
+            {
+                MessageBox.Show("Unable to detect your monitor's display modes");
+                resolutions = new List<String>() {resolution};
+            }
             cmbResolution.DataSource = resolutions;
             if (resolutions.Contains(resolution))
                 cmbResolution.SelectedIndex = resolutions.IndexOf(resolution);
+
             chkUnitActionLines.Checked = DomainController.Instance().getUnitActionLines();
             chkToolTips.Checked = DomainController.Instance().getTooltips();
             chkRepeat.Checked = DomainController.Instance().getMusicRepeat();
@@ -44,6 +54,9 @@ namespace gui
             trbScoreVolume.Value = Convert.ToInt32(DomainController.Instance().getScoreVolume() * 20);
             trbVoiceVolume.Value = Convert.ToInt32(DomainController.Instance().getVoiceVolume() * 20);
             trbSoundVolume.Value = Convert.ToInt32(DomainController.Instance().getSoundVolume() * 20);
+            chkUseCustomColors.Checked = DomainController.Instance().getOverrideColors();
+            ColorOverrides = DomainController.Instance().getColorOverrides();
+            TextBackgroundColor = DomainController.Instance().getTextBackgroundColor();
 
             if (GP_TSDDrawRadioButton.Checked) {
                 chkWindowed.Enabled = false;
@@ -128,6 +141,7 @@ namespace gui
             Double musicVolume = Convert.ToDouble(trbScoreVolume.Value) / 20.0;
             Double voiceVolume = Convert.ToDouble(trbVoiceVolume.Value) / 20.0;
             Double soundVolume = Convert.ToDouble(trbSoundVolume.Value) / 20.0;
+            Boolean OverrideColors = chkUseCustomColors.Checked;
 
             bool _GP_TSDDraw = GP_TSDDrawRadioButton.Checked;
             bool _GP_IEddraw = GP_IEddrawRadioButton.Checked;
@@ -135,7 +149,7 @@ namespace gui
             bool _GP_NoVideoMemory = GP_NoVideoMemoryCheckBox.Checked;
             bool _GP_FakeVsync = GP_FakeVsyncCheckBox.Checked;
 
-            return DomainController.Instance().saveSettings(width, height, unitActionLines, tooltips, videoWindowed, Backbuffer, Intro, CD, musicRepeat, musicShuffle, musicVolume, voiceVolume, soundVolume, _GP_IEddraw, _GP_ddwrapper, _GP_NoVideoMemory, _GP_FakeVsync, _GP_TSDDraw, procAffinity);
+            return DomainController.Instance().saveSettings(width, height, unitActionLines, tooltips, videoWindowed, Backbuffer, Intro, CD, musicRepeat, musicShuffle, musicVolume, voiceVolume, soundVolume, _GP_IEddraw, _GP_ddwrapper, _GP_NoVideoMemory, _GP_FakeVsync, _GP_TSDDraw, procAffinity, ColorOverrides, OverrideColors, TextBackgroundColor);
         }
 
         private void lblUnitActionLines_Click(object sender, EventArgs e)
@@ -238,8 +252,31 @@ namespace gui
         {
 
         }
+        private void lblUseCustomColors_Click(object sender, EventArgs e)
+        {
+          chkUseCustomColors.Checked = !chkUseCustomColors.Checked;
+          chkUseCustomColors.Select();
+        }
+        private int TextBackgroundColor = 0; // = 12 for black
+        private WWColor[] ColorOverrides = new WWColor[8];
+        private void btnColorSchemeEditor_Click(object sender, EventArgs e)
+        {
+            ColorSchemeEditor d = new ColorSchemeEditor();
+            for (int i = 0; i < ColorOverrides.Length; i++)
+                if (ColorOverrides[i] != null)
+                    d.Colors[i].WWColor = ColorOverrides[i];
 
+            if (TextBackgroundColor == 12)
+                d.BkgColor.Checked = true;
 
-
+            d.ShowDialog();
+            if (DialogResult.OK == d.DialogResult)
+            {
+                for (int i = 0; i < ColorOverrides.Length; i++)
+                    ColorOverrides[i] = d.Colors[i].WWColor;
+                if (d.BkgColor.Checked)
+                    TextBackgroundColor = 12;
+            }
+        }
     }
 }
