@@ -13,32 +13,6 @@ namespace tsconfig.persistence
     /// </summary>
     static class GameFileManagement
     {
-        /// <summary>
-        ///     This function tests the existing thipx32.dll file for known versions
-        /// </summary>
-        /// <returns>an object of the Thipx32DllID enum class with the file identification</returns>
-
-        /// <summary>
-        ///     This function tests the existing thipx32.dll file for known versions
-        /// </summary>
-        /// <param name="dllpath">Full path and filename of the thipx32.dll to check</param>
-        /// <returns>an object of the Thipx32DllID enum class with the file identification</returns>
-
-
-        /// <summary>
-        ///     This function tests the existing thipx32.dll file for known versions
-        /// </summary>
-        /// <returns>an object of the Thipx32DllID enum class with the file identification</returns>
-
-        /// <summary>
-        ///     This function tests the existing thipx32.dll file for known versions
-        /// </summary>
-        /// <param name="dllpath">Full path and filename of the thipx32.dll to check</param>
-        /// <returns>an object of the Thipx32DllID enum class with the file identification</returns>
-
-        /// <summary>
-        ///  Replace the current language.dll with an internally stored version
-        /// </summary>
 
         public static Boolean Istsconfig()
         {
@@ -56,6 +30,11 @@ namespace tsconfig.persistence
         public static void WriteddwrapperCfg()
         {
             File.WriteAllText(ProgramConstants.gamepath + ProgramConstants.DDWRAPPER_SETTINGS, tsconfig.Properties.Resources.aqrit);
+        }
+
+        public static void Writedxwnd_ini()
+        {
+            File.WriteAllText(ProgramConstants.gamepath + ProgramConstants.DXWND_SETTINGS, tsconfig.Properties.Resources.dxwnd_ini);
         }
 
     }

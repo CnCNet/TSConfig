@@ -13,7 +13,7 @@ namespace tsconfig.domain
     class DomainController
     {
         private static DomainController _instance;
-        private IniFile SUN_ini, ddwrapperCfg;
+        private IniFile SUN_ini, ddwrapperCfg, dxwnd_ini;
 
         /// <summary>
         ///     Default constructor.
@@ -26,14 +26,21 @@ namespace tsconfig.domain
             // such calls are ignored by checking with the hasInstance() method.
             SUN_ini = null; 
             ddwrapperCfg = null;
+            dxwnd_ini = null;
 
             String settingsPath = ProgramConstants.gamepath + ProgramConstants.GAME_SETTINGS;
             String ddwrapperCfgPath = ProgramConstants.gamepath + ProgramConstants.DDWRAPPER_SETTINGS;
+            String dxwndPath = ProgramConstants.gamepath + ProgramConstants.DXWND_SETTINGS;
 
             if (!File.Exists(settingsPath))
                 SUN_ini = new IniFile(settingsPath, tsconfig.Properties.Resources.SUN_ini, Encoding.GetEncoding("windows-1252"));
             else
                 SUN_ini = new IniFile(settingsPath, Encoding.GetEncoding("windows-1252"));
+
+            if (!File.Exists(dxwndPath))
+                dxwnd_ini = new IniFile(dxwndPath, tsconfig.Properties.Resources.dxwnd_ini, Encoding.Default);
+            else
+                dxwnd_ini = new IniFile(dxwndPath, Encoding.Default);
 
             if (!File.Exists(ddwrapperCfgPath))
                 ddwrapperCfg = new IniFile(ddwrapperCfgPath, tsconfig.Properties.Resources.aqrit, false, BooleanMode.ONEZERO, false, Encoding.Default);
@@ -154,6 +161,7 @@ namespace tsconfig.domain
             }
             return c;
         }
+
         private string setDefaultName(String name)
         {
             if (name.Equals(String.Empty))
@@ -165,6 +173,23 @@ namespace tsconfig.domain
             if (name.Length > 14) 
                 name = name.Substring(0, 14);
             return name;
+        }
+
+        public bool getDxWndStatus()
+        {
+            string _DxWndDll = ProgramConstants.gamepath + "dxwnd.dll";
+            string _DxWndDDrawDll = ProgramConstants.gamepath + "ddraw.dll";
+
+            if (!File.Exists(_DxWndDll) || !File.Exists(_DxWndDDrawDll))
+                return false;
+            else
+            {
+                if ((Utilities.calculateMD5ForFile(_DxWndDll) == "f349bbf8cfb90c81e9d2a931797f6800") && (Utilities.calculateMD5ForFile(_DxWndDDrawDll) == "6e503eeae8b748cfa7fae97c65315e58"))
+                    return true;
+                else
+                    return false;
+
+            }
         }
 
         public bool getDDwrapperStatus()
@@ -208,6 +233,21 @@ namespace tsconfig.domain
             }
         }
 
+        public bool getDxWndEnabled() 
+        {
+            return dxwnd_ini.getBoolValue("DxWnd", "Enabled", false);
+        }
+
+        public bool getDxWndWindow()
+        {
+            return dxwnd_ini.getBoolValue("DxWnd", "RunInWindow", false);
+        }
+
+        public bool getDxWndWindowFrame()
+        {
+            return dxwnd_ini.getBoolValue("DxWnd", "NoWindowFrame", false);
+        }
+
         public bool getNoVideoMemory()
         {
             return ddwrapperCfg.getBoolValue("ddraw", "NoVideoMemory", false);
@@ -218,7 +258,34 @@ namespace tsconfig.domain
             return ddwrapperCfg.getBoolValue("ddraw", "FakeVsync", false);
         }
 
-        public Boolean saveSettings(int width, int height, Boolean unitActionLines, Boolean tooltips, Boolean videoWindowed, bool Backbuffer, Boolean Intro, bool CD, Boolean musicRepeat, Boolean musicShuffle, Double musicVolume, Double voiceVolume, Double soundVolume, bool _GP_IEddraw, bool _GP_ddwrapper, bool _GP_NoVideoMemory, bool _GP_FakeVsync, bool _GP_TSDDraw, bool procAffinity, WWColor[] ColorOverrides, Boolean OverrideColors, int TextBackgroundColor)
+        public Boolean saveSettings(
+            int width, 
+            int height, 
+            Boolean unitActionLines, 
+            Boolean tooltips, 
+            Boolean videoWindowed, 
+            bool Backbuffer, 
+            Boolean Intro, 
+            bool CD, 
+            Boolean musicRepeat, 
+            Boolean musicShuffle, 
+            Double musicVolume, 
+            Double voiceVolume,
+            Double soundVolume, 
+            bool _GP_IEddraw, 
+            bool _GP_ddwrapper, 
+            bool _GP_NoVideoMemory, 
+            bool _GP_FakeVsync, 
+            bool _GP_TSDDraw,
+            bool _GP_dxwnd,
+            bool _GP_DxWndEnabled,
+            bool _GP_DxWndWindow,
+            bool _GP_DxWndWindowFrame,
+            bool procAffinity, 
+            WWColor[] ColorOverrides, 
+            Boolean OverrideColors, 
+            int TextBackgroundColor
+            )
         {
             Boolean allOk = true;
             // INI SETTINGS
@@ -262,24 +329,51 @@ namespace tsconfig.domain
             if (!File.Exists(ProgramConstants.gamepath + ProgramConstants.DDWRAPPER_SETTINGS))
                 GameFileManagement.WriteddwrapperCfg();
 
-            allOk &= SUN_ini.writeIni() && ddwrapperCfg.writeIni();
+            dxwnd_ini.setBoolValue("DxWnd", "NoWindowFrame", _GP_DxWndWindowFrame);
+            dxwnd_ini.setBoolValue("DxWnd", "Enabled", _GP_DxWndEnabled);
+            dxwnd_ini.setBoolValue("DxWnd", "RunInWindow", _GP_DxWndWindow);
+
+            if (!File.Exists(ProgramConstants.gamepath + ProgramConstants.DXWND_SETTINGS))
+                GameFileManagement.Writedxwnd_ini();
+
+            allOk &= SUN_ini.writeIni() && ddwrapperCfg.writeIni() && dxwnd_ini.writeIni();
 
             /* DLL SETTINGS */
 
             string _DDrawDll = ProgramConstants.gamepath + "ddraw.dll";
             string _libwineDll = ProgramConstants.gamepath + "libwine.dll";
             string _wined3dDll = ProgramConstants.gamepath + "wined3d.dll";
+            string _dxwndDll = ProgramConstants.gamepath + "dxwnd.dll";
+            string _dxwnd_ddrawDll = ProgramConstants.gamepath + "ddraw.dll"; 
+            
             try
             {
                 if (File.Exists(_DDrawDll)) File.Delete(_DDrawDll);
                 if (File.Exists(_libwineDll)) File.Delete(_libwineDll);
                 if (File.Exists(_wined3dDll)) File.Delete(_wined3dDll);
+                if (File.Exists(_dxwndDll)) File.Delete(_dxwndDll);
+                if (File.Exists(_dxwnd_ddrawDll)) File.Delete(_dxwnd_ddrawDll);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 allOk = false;
             }
+
+            if (_GP_dxwnd) 
+            {
+                try
+                {
+                    File.WriteAllBytes(_dxwnd_ddrawDll, tsconfig.Properties.Resources.dxwnd_ddraw);
+                    File.WriteAllBytes(_dxwndDll, tsconfig.Properties.Resources.dxwnd);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    allOk = false;
+                }
+            }
+
 
             if (_GP_ddwrapper)
             {

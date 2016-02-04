@@ -41,7 +41,7 @@ namespace gui
             FormBorderStyle = FormBorderStyle.FixedDialog;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Color Scheme Editor";
-            Size = new Size(256, 370);
+            Size = new Size(260, 410);
             MinimizeBox = false;
             MaximizeBox = false;
 

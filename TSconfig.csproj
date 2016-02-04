@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -54,16 +54,16 @@
     <ApplicationIcon>tsconfig.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>7D9F5AD6595A94B72145ABE05A7F43AEF032AB45</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B5D9CE02DF1ED31F16861F8899825165CAE294B0</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>DTASetup_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>TSconfig_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -86,14 +86,22 @@
     <Compile Include="gui\SetupFrame.Designer.cs">
       <DependentUpon>SetupFrame.cs</DependentUpon>
     </Compile>
-    <Compile Include="gui\ColorSchemeEditor.cs" />
-    <Compile Include="gui\ColorDialog.cs" />
+    <Compile Include="gui\ColorSchemeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\ColorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="persistence\GameFileManagement.cs" />
     <Compile Include="persistence\ini\BooleanMode.cs" />
     <Compile Include="persistence\ini\IniFile.cs" />
     <Compile Include="persistence\ini\IniSection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="gui\ColorDialog.resx">
+      <DependentUpon>ColorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\SetupFrame.resx">
       <DependentUpon>SetupFrame.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -121,8 +129,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Resources\aqrit.cfg" />
+    <None Include="Resources\dxwnd.ini" />
     <None Include="Resources\SUN.ini" />
     <None Include="Resources\tsconfig.xcf" />
+    <None Include="TSconfig_1_TemporaryKey.pfx" />
+    <None Include="TSConfig_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -149,6 +160,8 @@
     <None Include="bin\Debug\ddwrapper.dll" />
     <Content Include="Resources\ddraw.dll" />
     <Content Include="Resources\ddwrapper.dll" />
+    <Content Include="Resources\dxwnd.dll" />
+    <Content Include="Resources\dxwnd_ddraw.dll" />
     <Content Include="Resources\libwine.dll" />
     <Content Include="Resources\tsconfig.ico" />
     <Content Include="Resources\tsconfig.png" />

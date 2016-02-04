@@ -114,5 +114,17 @@ namespace gui
             CancelButton = cancel;
 
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // TSColorDialog
+            // 
+            this.ClientSize = new System.Drawing.Size(303, 322);
+            this.Name = "TSColorDialog";
+            this.ResumeLayout(false);
+
+        }
     }
 }

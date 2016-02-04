@@ -12,6 +12,7 @@ namespace tsconfig.domain.constants
         public const String GAME_SETTINGS = "SUN.ini";
         public const String LAUNCHER_SETTINGS = "Launcher.ini";
         public const String DDWRAPPER_SETTINGS = "aqrit.cfg";
+        public const String DXWND_SETTINGS = "dxwnd.ini";
 
         public static String gamepath = Path.GetDirectoryName(Application.ExecutablePath).TrimEnd('\\') + @"\";
 

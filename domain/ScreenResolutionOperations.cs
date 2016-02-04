@@ -143,7 +143,8 @@ namespace screenres
 
                if (devmode.dmPelsWidth >= minWidth
                     && devmode.dmPelsHeight >= minHeight
-                    && notInList)
+                    && notInList
+                    && devmode.dmPelsHeight <= 1200)
                 {
                     screenresolutions.Add(mode);
                 }

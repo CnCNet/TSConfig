@@ -117,38 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tsconfig_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tsconfig.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SUN_ini" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SUN.ini;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="ddraw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ddraw.dll;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ddwrapper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ddwrapper.dll;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tsddraw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tsddraw.dll;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="libwine" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\libwine.dll;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="wined3d" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wined3d.dll;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="aqrit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\aqrit.cfg;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="dxwnd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\dxwnd.dll;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="dxwnd_ddraw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\dxwnd_ddraw.dll;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="dxwnd_ini" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\dxwnd.ini;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
 </root>

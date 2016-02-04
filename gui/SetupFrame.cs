@@ -58,26 +58,46 @@ namespace gui
             ColorOverrides = DomainController.Instance().getColorOverrides();
             TextBackgroundColor = DomainController.Instance().getTextBackgroundColor();
 
-            if (GP_TSDDrawRadioButton.Checked) {
+            if (GP_DxWndRadioButton.Checked)
+            {
+                chkWindowed.Enabled = false;
+                chkWindowed.Checked = false;
+            }
+
+            if (GP_TSDDrawRadioButton.Checked)
+            {
                 chkWindowed.Enabled = false;
                 chkWindowed.Checked = false;
             }
 
             GP_ddwrapperRadioButton.Checked = DomainController.Instance().getDDwrapperStatus();
 
-            if (!GP_ddwrapperRadioButton.Checked && !GP_IEddrawRadioButton.Checked)
+            if (!GP_ddwrapperRadioButton.Checked && !GP_IEddrawRadioButton.Checked && !GP_DxWndRadioButton.Checked)
                 GP_TSDDrawRadioButton.Checked = DomainController.Instance().getTSDDrawStatus();
-            
-            if (!GP_ddwrapperRadioButton.Checked && !GP_TSDDrawRadioButton.Checked)
+
+            if (!GP_ddwrapperRadioButton.Checked && !GP_TSDDrawRadioButton.Checked && !GP_DxWndRadioButton.Checked)
+                chkWindowed.Enabled = true;
                 GP_IEddrawRadioButton.Checked = DomainController.Instance().getIEDDrawStatus();
+
+            if (!GP_ddwrapperRadioButton.Checked && !GP_TSDDrawRadioButton.Checked && !GP_IEddrawRadioButton.Checked)
+                GP_DxWndRadioButton.Checked = DomainController.Instance().getDxWndStatus();
 
            /* if (chkWindowed.Checked && !GP_TSDDrawRadioButton.Checked)
                 MessageBox.Show("If TS-DDraw is not enabled then Windowed mode requires 16-bit color depth on your desktop", "Windowed mode info", MessageBoxButtons.OK, MessageBoxIcon.Information); */
 
-            GP_DisabledRadioButton.Checked = !GP_ddwrapperRadioButton.Checked && !GP_IEddrawRadioButton.Checked && !GP_TSDDrawRadioButton.Checked;
+            GP_DisabledRadioButton.Checked = !GP_ddwrapperRadioButton.Checked && !GP_IEddrawRadioButton.Checked && !GP_TSDDrawRadioButton.Checked && !GP_DxWndRadioButton.Checked;
+
+            if (GP_DisabledRadioButton.Checked)
+                    chkWindowed.Enabled = true;
+
 
             GP_NoVideoMemoryCheckBox.Checked = DomainController.Instance().getNoVideoMemory();
             GP_FakeVsyncCheckBox.Checked = DomainController.Instance().getFakeVsync();
+            GP_DxWndWindowBordersCheckBox.Checked = DomainController.Instance().getDxWndWindowFrame();
+            GP_DxWndWindowedCheckBox.Checked = DomainController.Instance().getDxWndWindow();
+
+            if (GP_DxWndRadioButton.Checked)
+                GP_DxWndRadioButton.Checked = DomainController.Instance().getDxWndEnabled();
 
         }
 
@@ -148,8 +168,38 @@ namespace gui
             bool _GP_ddwrapper = GP_ddwrapperRadioButton.Checked;
             bool _GP_NoVideoMemory = GP_NoVideoMemoryCheckBox.Checked;
             bool _GP_FakeVsync = GP_FakeVsyncCheckBox.Checked;
+            bool _GP_DxWndEnabled = GP_DxWndRadioButton.Checked;
+            bool _GP_dxwnd = GP_DxWndRadioButton.Checked;
+            bool _GP_DxWndWindow = GP_DxWndWindowedCheckBox.Checked;
+            bool _GP_DxWndWindowFrame = GP_DxWndWindowBordersCheckBox.Checked;
 
-            return DomainController.Instance().saveSettings(width, height, unitActionLines, tooltips, videoWindowed, Backbuffer, Intro, CD, musicRepeat, musicShuffle, musicVolume, voiceVolume, soundVolume, _GP_IEddraw, _GP_ddwrapper, _GP_NoVideoMemory, _GP_FakeVsync, _GP_TSDDraw, procAffinity, ColorOverrides, OverrideColors, TextBackgroundColor);
+            return DomainController.Instance().saveSettings(
+                width, 
+                height, 
+                unitActionLines, 
+                tooltips, 
+                videoWindowed, 
+                Backbuffer, 
+                Intro, 
+                CD, 
+                musicRepeat, 
+                musicShuffle, 
+                musicVolume, 
+                voiceVolume, 
+                soundVolume, 
+                _GP_IEddraw,
+                _GP_ddwrapper,
+                _GP_NoVideoMemory, 
+                _GP_FakeVsync, 
+                _GP_TSDDraw,
+                _GP_dxwnd,
+                _GP_DxWndEnabled,
+                _GP_DxWndWindow, 
+                _GP_DxWndWindowFrame, 
+                procAffinity, 
+                ColorOverrides, 
+                OverrideColors, 
+                TextBackgroundColor);
         }
 
         private void lblUnitActionLines_Click(object sender, EventArgs e)
@@ -234,6 +284,30 @@ namespace gui
             GP_ddwrapperRadioButton.Select();
         }
 
+        private void GP_DxWndLabel_Click(object sender, EventArgs e)
+        {
+            GP_DxWndRadioButton.Select();
+        }
+
+        private void GP_DxWndRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            GP_DxWndWindowedCheckBox.Enabled = (GP_DxWndWindowBordersCheckBox.Enabled = GP_DxWndRadioButton.Checked);
+        }
+
+        private void GP_DxWndWinowedLabel_Click(object sender, EventArgs e)
+        {
+            if (GP_DxWndRadioButton.Checked)
+                GP_DxWndWindowedCheckBox.Checked = !GP_DxWndWindowedCheckBox.Checked;
+            GP_DxWndWindowedCheckBox.Select();
+        }
+
+        private void GP_DxWndWindowBordersLabel_Click(object sender, EventArgs e)
+        {
+            if (GP_DxWndRadioButton.Checked)
+                GP_DxWndWindowBordersCheckBox.Checked = !GP_DxWndWindowBordersCheckBox.Checked;
+            GP_DxWndWindowBordersCheckBox.Select();
+        }
+
         private void GP_NoVideoMemoryLabel_Click(object sender, EventArgs e)
         {
             if (GP_ddwrapperRadioButton.Checked)
@@ -248,10 +322,6 @@ namespace gui
             GP_FakeVsyncCheckBox.Select();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
         private void lblUseCustomColors_Click(object sender, EventArgs e)
         {
           chkUseCustomColors.Checked = !chkUseCustomColors.Checked;
@@ -278,5 +348,6 @@ namespace gui
                     TextBackgroundColor = 12;
             }
         }
+
     }
 }
