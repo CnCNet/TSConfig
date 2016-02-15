@@ -58,18 +58,6 @@ namespace gui
             ColorOverrides = DomainController.Instance().getColorOverrides();
             TextBackgroundColor = DomainController.Instance().getTextBackgroundColor();
 
-            if (GP_DxWndRadioButton.Checked)
-            {
-                chkWindowed.Enabled = false;
-                chkWindowed.Checked = false;
-            }
-
-            if (GP_TSDDrawRadioButton.Checked)
-            {
-                chkWindowed.Enabled = false;
-                chkWindowed.Checked = false;
-            }
-
             GP_ddwrapperRadioButton.Checked = DomainController.Instance().getDDwrapperStatus();
 
             if (!GP_ddwrapperRadioButton.Checked && !GP_IEddrawRadioButton.Checked && !GP_DxWndRadioButton.Checked)
@@ -88,8 +76,7 @@ namespace gui
             GP_DisabledRadioButton.Checked = !GP_ddwrapperRadioButton.Checked && !GP_IEddrawRadioButton.Checked && !GP_TSDDrawRadioButton.Checked && !GP_DxWndRadioButton.Checked;
 
             if (GP_DisabledRadioButton.Checked)
-                    chkWindowed.Enabled = true;
-
+                chkWindowed.Enabled = true;
 
             GP_NoVideoMemoryCheckBox.Checked = DomainController.Instance().getNoVideoMemory();
             GP_FakeVsyncCheckBox.Checked = DomainController.Instance().getFakeVsync();
@@ -98,6 +85,18 @@ namespace gui
 
             if (GP_DxWndRadioButton.Checked)
                 GP_DxWndRadioButton.Checked = DomainController.Instance().getDxWndEnabled();
+
+            if (GP_DxWndRadioButton.Checked)
+            {
+                chkWindowed.Enabled = false;
+                chkWindowed.Checked = false;
+            }
+
+            if (GP_TSDDrawRadioButton.Checked)
+            {
+                chkWindowed.Enabled = false;
+                chkWindowed.Checked = false;
+            }
 
         }
 

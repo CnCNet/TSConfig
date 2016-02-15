@@ -106,7 +106,7 @@
             this.btnOK.Location = new System.Drawing.Point(12, 398);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 43;
+            this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -118,7 +118,7 @@
             this.btnCancel.Location = new System.Drawing.Point(222, 398);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 45;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -128,7 +128,7 @@
             this.btnApply.Location = new System.Drawing.Point(125, 398);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
-            this.btnApply.TabIndex = 44;
+            this.btnApply.TabIndex = 2;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
@@ -142,7 +142,7 @@
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(301, 386);
-            this.tabControl.TabIndex = 53;
+            this.tabControl.TabIndex = 0;
             // 
             // videoPage
             // 
@@ -187,7 +187,7 @@
             this.GP_DxWndWindowBordersCheckBox.Location = new System.Drawing.Point(164, 302);
             this.GP_DxWndWindowBordersCheckBox.Name = "GP_DxWndWindowBordersCheckBox";
             this.GP_DxWndWindowBordersCheckBox.Size = new System.Drawing.Size(29, 17);
-            this.GP_DxWndWindowBordersCheckBox.TabIndex = 81;
+            this.GP_DxWndWindowBordersCheckBox.TabIndex = 11;
             this.GP_DxWndWindowBordersCheckBox.Text = " ";
             this.GP_DxWndWindowBordersCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -196,8 +196,8 @@
             this.GP_DxWndWindowBordersLabel.Location = new System.Drawing.Point(34, 303);
             this.GP_DxWndWindowBordersLabel.Name = "GP_DxWndWindowBordersLabel";
             this.GP_DxWndWindowBordersLabel.Size = new System.Drawing.Size(230, 16);
-            this.GP_DxWndWindowBordersLabel.TabIndex = 80;
-            this.GP_DxWndWindowBordersLabel.Text = "No border";
+            this.GP_DxWndWindowBordersLabel.TabIndex = 12;
+            this.GP_DxWndWindowBordersLabel.Text = "No window border";
             // 
             // GP_DxWndWindowedCheckBox
             // 
@@ -206,7 +206,7 @@
             this.GP_DxWndWindowedCheckBox.Location = new System.Drawing.Point(164, 280);
             this.GP_DxWndWindowedCheckBox.Name = "GP_DxWndWindowedCheckBox";
             this.GP_DxWndWindowedCheckBox.Size = new System.Drawing.Size(29, 17);
-            this.GP_DxWndWindowedCheckBox.TabIndex = 79;
+            this.GP_DxWndWindowedCheckBox.TabIndex = 10;
             this.GP_DxWndWindowedCheckBox.Text = " ";
             this.GP_DxWndWindowedCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -215,7 +215,7 @@
             this.GP_DxWndWindowedLabel.Location = new System.Drawing.Point(34, 281);
             this.GP_DxWndWindowedLabel.Name = "GP_DxWndWindowedLabel";
             this.GP_DxWndWindowedLabel.Size = new System.Drawing.Size(232, 18);
-            this.GP_DxWndWindowedLabel.TabIndex = 78;
+            this.GP_DxWndWindowedLabel.TabIndex = 13;
             this.GP_DxWndWindowedLabel.Text = "Windowed Mode:";
             // 
             // GP_DxWndRadioButton
@@ -224,7 +224,7 @@
             this.GP_DxWndRadioButton.Location = new System.Drawing.Point(147, 256);
             this.GP_DxWndRadioButton.Name = "GP_DxWndRadioButton";
             this.GP_DxWndRadioButton.Size = new System.Drawing.Size(14, 13);
-            this.GP_DxWndRadioButton.TabIndex = 77;
+            this.GP_DxWndRadioButton.TabIndex = 9;
             this.GP_DxWndRadioButton.TabStop = true;
             this.GP_DxWndRadioButton.UseVisualStyleBackColor = true;
             this.GP_DxWndRadioButton.CheckedChanged += new System.EventHandler(this.GP_DxWndRadioButton_CheckedChanged);
@@ -234,26 +234,26 @@
             this.GP_DxWndLabel.Location = new System.Drawing.Point(17, 256);
             this.GP_DxWndLabel.Name = "GP_DxWndLabel";
             this.GP_DxWndLabel.Size = new System.Drawing.Size(230, 15);
-            this.GP_DxWndLabel.TabIndex = 76;
+            this.GP_DxWndLabel.TabIndex = 14;
             this.GP_DxWndLabel.Text = "DxWnd:";
             this.GP_DxWndLabel.Click += new System.EventHandler(this.GP_DxWndLabel_Click);
             // 
             // GP_TSDDrawRadioButton
             // 
             this.GP_TSDDrawRadioButton.AutoSize = true;
-            this.GP_TSDDrawRadioButton.Location = new System.Drawing.Point(147, 138);
+            this.GP_TSDDrawRadioButton.Location = new System.Drawing.Point(147, 139);
             this.GP_TSDDrawRadioButton.Name = "GP_TSDDrawRadioButton";
             this.GP_TSDDrawRadioButton.Size = new System.Drawing.Size(14, 13);
-            this.GP_TSDDrawRadioButton.TabIndex = 67;
+            this.GP_TSDDrawRadioButton.TabIndex = 4;
             this.GP_TSDDrawRadioButton.TabStop = true;
             this.GP_TSDDrawRadioButton.UseVisualStyleBackColor = true;
             // 
             // GP_TSDDrawLabel
             // 
-            this.GP_TSDDrawLabel.Location = new System.Drawing.Point(17, 138);
+            this.GP_TSDDrawLabel.Location = new System.Drawing.Point(17, 142);
             this.GP_TSDDrawLabel.Name = "GP_TSDDrawLabel";
             this.GP_TSDDrawLabel.Size = new System.Drawing.Size(230, 15);
-            this.GP_TSDDrawLabel.TabIndex = 66;
+            this.GP_TSDDrawLabel.TabIndex = 19;
             this.GP_TSDDrawLabel.Text = "TS-DDraw:";
             // 
             // GP_FakeVsyncCheckBox
@@ -263,7 +263,7 @@
             this.GP_FakeVsyncCheckBox.Location = new System.Drawing.Point(164, 231);
             this.GP_FakeVsyncCheckBox.Name = "GP_FakeVsyncCheckBox";
             this.GP_FakeVsyncCheckBox.Size = new System.Drawing.Size(29, 17);
-            this.GP_FakeVsyncCheckBox.TabIndex = 75;
+            this.GP_FakeVsyncCheckBox.TabIndex = 8;
             this.GP_FakeVsyncCheckBox.Text = " ";
             this.GP_FakeVsyncCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -272,7 +272,7 @@
             this.GP_FakeVsyncLabel.Location = new System.Drawing.Point(34, 232);
             this.GP_FakeVsyncLabel.Name = "GP_FakeVsyncLabel";
             this.GP_FakeVsyncLabel.Size = new System.Drawing.Size(230, 16);
-            this.GP_FakeVsyncLabel.TabIndex = 74;
+            this.GP_FakeVsyncLabel.TabIndex = 15;
             this.GP_FakeVsyncLabel.Text = "Fake Vsync:";
             // 
             // GP_NoVideoMemoryCheckBox
@@ -282,7 +282,7 @@
             this.GP_NoVideoMemoryCheckBox.Location = new System.Drawing.Point(164, 209);
             this.GP_NoVideoMemoryCheckBox.Name = "GP_NoVideoMemoryCheckBox";
             this.GP_NoVideoMemoryCheckBox.Size = new System.Drawing.Size(29, 17);
-            this.GP_NoVideoMemoryCheckBox.TabIndex = 73;
+            this.GP_NoVideoMemoryCheckBox.TabIndex = 7;
             this.GP_NoVideoMemoryCheckBox.Text = " ";
             this.GP_NoVideoMemoryCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -291,7 +291,7 @@
             this.GP_NoVideoMemoryLabel.Location = new System.Drawing.Point(34, 210);
             this.GP_NoVideoMemoryLabel.Name = "GP_NoVideoMemoryLabel";
             this.GP_NoVideoMemoryLabel.Size = new System.Drawing.Size(232, 18);
-            this.GP_NoVideoMemoryLabel.TabIndex = 72;
+            this.GP_NoVideoMemoryLabel.TabIndex = 16;
             this.GP_NoVideoMemoryLabel.Text = "No Video Memory:";
             // 
             // GP_ddwrapperRadioButton
@@ -300,7 +300,7 @@
             this.GP_ddwrapperRadioButton.Location = new System.Drawing.Point(147, 185);
             this.GP_ddwrapperRadioButton.Name = "GP_ddwrapperRadioButton";
             this.GP_ddwrapperRadioButton.Size = new System.Drawing.Size(14, 13);
-            this.GP_ddwrapperRadioButton.TabIndex = 71;
+            this.GP_ddwrapperRadioButton.TabIndex = 6;
             this.GP_ddwrapperRadioButton.TabStop = true;
             this.GP_ddwrapperRadioButton.UseVisualStyleBackColor = true;
             this.GP_ddwrapperRadioButton.CheckedChanged += new System.EventHandler(this.GP_ddwrapperRadioButton_CheckedChanged);
@@ -308,10 +308,10 @@
             // GP_IEddrawRadioButton
             // 
             this.GP_IEddrawRadioButton.AutoSize = true;
-            this.GP_IEddrawRadioButton.Location = new System.Drawing.Point(147, 163);
+            this.GP_IEddrawRadioButton.Location = new System.Drawing.Point(147, 162);
             this.GP_IEddrawRadioButton.Name = "GP_IEddrawRadioButton";
             this.GP_IEddrawRadioButton.Size = new System.Drawing.Size(14, 13);
-            this.GP_IEddrawRadioButton.TabIndex = 69;
+            this.GP_IEddrawRadioButton.TabIndex = 5;
             this.GP_IEddrawRadioButton.TabStop = true;
             this.GP_IEddrawRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -321,24 +321,24 @@
             this.GP_DisabledRadioButton.Location = new System.Drawing.Point(147, 116);
             this.GP_DisabledRadioButton.Name = "GP_DisabledRadioButton";
             this.GP_DisabledRadioButton.Size = new System.Drawing.Size(14, 13);
-            this.GP_DisabledRadioButton.TabIndex = 65;
+            this.GP_DisabledRadioButton.TabIndex = 3;
             this.GP_DisabledRadioButton.TabStop = true;
             this.GP_DisabledRadioButton.UseVisualStyleBackColor = true;
             // 
             // GP_ddwrapperLabel
             // 
-            this.GP_ddwrapperLabel.Location = new System.Drawing.Point(17, 185);
+            this.GP_ddwrapperLabel.Location = new System.Drawing.Point(17, 184);
             this.GP_ddwrapperLabel.Name = "GP_ddwrapperLabel";
             this.GP_ddwrapperLabel.Size = new System.Drawing.Size(230, 15);
-            this.GP_ddwrapperLabel.TabIndex = 70;
+            this.GP_ddwrapperLabel.TabIndex = 17;
             this.GP_ddwrapperLabel.Text = "ddwrapper:";
             // 
             // GP_IEddrawLabel
             // 
-            this.GP_IEddrawLabel.Location = new System.Drawing.Point(17, 163);
+            this.GP_IEddrawLabel.Location = new System.Drawing.Point(17, 164);
             this.GP_IEddrawLabel.Name = "GP_IEddrawLabel";
             this.GP_IEddrawLabel.Size = new System.Drawing.Size(230, 13);
-            this.GP_IEddrawLabel.TabIndex = 68;
+            this.GP_IEddrawLabel.TabIndex = 18;
             this.GP_IEddrawLabel.Text = "IE-ddraw:";
             // 
             // GP_DisabledLabel
@@ -346,7 +346,7 @@
             this.GP_DisabledLabel.Location = new System.Drawing.Point(17, 116);
             this.GP_DisabledLabel.Name = "GP_DisabledLabel";
             this.GP_DisabledLabel.Size = new System.Drawing.Size(230, 19);
-            this.GP_DisabledLabel.TabIndex = 64;
+            this.GP_DisabledLabel.TabIndex = 20;
             this.GP_DisabledLabel.Text = "Default:";
             // 
             // GraphicPatchLabel
@@ -355,7 +355,7 @@
             this.GraphicPatchLabel.Location = new System.Drawing.Point(4, 91);
             this.GraphicPatchLabel.Name = "GraphicPatchLabel";
             this.GraphicPatchLabel.Size = new System.Drawing.Size(56, 13);
-            this.GraphicPatchLabel.TabIndex = 63;
+            this.GraphicPatchLabel.TabIndex = 21;
             this.GraphicPatchLabel.Text = "Rendering";
             // 
             // chkBackbuffer
@@ -364,7 +364,7 @@
             this.chkBackbuffer.Location = new System.Drawing.Point(147, 68);
             this.chkBackbuffer.Name = "chkBackbuffer";
             this.chkBackbuffer.Size = new System.Drawing.Size(29, 17);
-            this.chkBackbuffer.TabIndex = 59;
+            this.chkBackbuffer.TabIndex = 2;
             this.chkBackbuffer.Text = " ";
             this.chkBackbuffer.UseVisualStyleBackColor = true;
             // 
@@ -373,7 +373,7 @@
             this.lblBackbuffer.Location = new System.Drawing.Point(17, 68);
             this.lblBackbuffer.Name = "lblBackbuffer";
             this.lblBackbuffer.Size = new System.Drawing.Size(344, 14);
-            this.lblBackbuffer.TabIndex = 58;
+            this.lblBackbuffer.TabIndex = 22;
             this.lblBackbuffer.Text = "Graphics Patch:";
             // 
             // lblVideo
@@ -382,7 +382,7 @@
             this.lblVideo.Location = new System.Drawing.Point(4, 1);
             this.lblVideo.Name = "lblVideo";
             this.lblVideo.Size = new System.Drawing.Size(34, 13);
-            this.lblVideo.TabIndex = 53;
+            this.lblVideo.TabIndex = 25;
             this.lblVideo.Text = "Video";
             // 
             // chkWindowed
@@ -391,7 +391,7 @@
             this.chkWindowed.Location = new System.Drawing.Point(147, 45);
             this.chkWindowed.Name = "chkWindowed";
             this.chkWindowed.Size = new System.Drawing.Size(29, 17);
-            this.chkWindowed.TabIndex = 57;
+            this.chkWindowed.TabIndex = 1;
             this.chkWindowed.Text = " ";
             this.chkWindowed.UseVisualStyleBackColor = true;
             // 
@@ -400,7 +400,7 @@
             this.lblWindowed.Location = new System.Drawing.Point(17, 47);
             this.lblWindowed.Name = "lblWindowed";
             this.lblWindowed.Size = new System.Drawing.Size(344, 14);
-            this.lblWindowed.TabIndex = 56;
+            this.lblWindowed.TabIndex = 23;
             this.lblWindowed.Text = "Windowed Mode:";
             // 
             // label1
@@ -409,7 +409,7 @@
             this.label1.Location = new System.Drawing.Point(17, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 13);
-            this.label1.TabIndex = 54;
+            this.label1.TabIndex = 24;
             this.label1.Text = "Screen resolution:";
             // 
             // cmbResolution
@@ -419,7 +419,7 @@
             this.cmbResolution.Location = new System.Drawing.Point(147, 19);
             this.cmbResolution.Name = "cmbResolution";
             this.cmbResolution.Size = new System.Drawing.Size(119, 21);
-            this.cmbResolution.TabIndex = 55;
+            this.cmbResolution.TabIndex = 0;
             // 
             // gameOptionsPage
             // 
@@ -459,16 +459,16 @@
             this.btnColorSchemeEditor.Location = new System.Drawing.Point(164, 127);
             this.btnColorSchemeEditor.Name = "btnColorSchemeEditor";
             this.btnColorSchemeEditor.Size = new System.Drawing.Size(76, 22);
-            this.btnColorSchemeEditor.TabIndex = 63;
+            this.btnColorSchemeEditor.TabIndex = 6;
             this.btnColorSchemeEditor.Text = "Edit Colors";
             this.btnColorSchemeEditor.Click += new System.EventHandler(this.btnColorSchemeEditor_Click);
             // 
             // chkUseCustomColors
             // 
-            this.chkUseCustomColors.Location = new System.Drawing.Point(146, 127);
+            this.chkUseCustomColors.Location = new System.Drawing.Point(146, 125);
             this.chkUseCustomColors.Name = "chkUseCustomColors";
             this.chkUseCustomColors.Size = new System.Drawing.Size(29, 17);
-            this.chkUseCustomColors.TabIndex = 65;
+            this.chkUseCustomColors.TabIndex = 5;
             this.chkUseCustomColors.Text = " ";
             this.chkUseCustomColors.UseVisualStyleBackColor = true;
             // 
@@ -477,16 +477,16 @@
             this.lblUseCustomColors.Location = new System.Drawing.Point(16, 127);
             this.lblUseCustomColors.Name = "lblUseCustomColors";
             this.lblUseCustomColors.Size = new System.Drawing.Size(145, 14);
-            this.lblUseCustomColors.TabIndex = 64;
+            this.lblUseCustomColors.TabIndex = 7;
             this.lblUseCustomColors.Text = "Use Custom Colors:";
             // 
             // chkProcAffinity
             // 
             this.chkProcAffinity.AutoSize = true;
-            this.chkProcAffinity.Location = new System.Drawing.Point(146, 107);
+            this.chkProcAffinity.Location = new System.Drawing.Point(146, 105);
             this.chkProcAffinity.Name = "chkProcAffinity";
             this.chkProcAffinity.Size = new System.Drawing.Size(29, 17);
-            this.chkProcAffinity.TabIndex = 60;
+            this.chkProcAffinity.TabIndex = 4;
             this.chkProcAffinity.Text = " ";
             this.chkProcAffinity.UseVisualStyleBackColor = true;
             // 
@@ -495,16 +495,16 @@
             this.lblProcAffinity.Location = new System.Drawing.Point(16, 107);
             this.lblProcAffinity.Name = "lblProcAffinity";
             this.lblProcAffinity.Size = new System.Drawing.Size(297, 14);
-            this.lblProcAffinity.TabIndex = 59;
+            this.lblProcAffinity.TabIndex = 8;
             this.lblProcAffinity.Text = "Single Processor Affinity:";
             // 
             // chkCD
             // 
             this.chkCD.AutoSize = true;
-            this.chkCD.Location = new System.Drawing.Point(146, 87);
+            this.chkCD.Location = new System.Drawing.Point(146, 85);
             this.chkCD.Name = "chkCD";
             this.chkCD.Size = new System.Drawing.Size(29, 17);
-            this.chkCD.TabIndex = 58;
+            this.chkCD.TabIndex = 3;
             this.chkCD.Text = " ";
             this.chkCD.UseVisualStyleBackColor = true;
             // 
@@ -513,16 +513,16 @@
             this.lblCD.Location = new System.Drawing.Point(16, 87);
             this.lblCD.Name = "lblCD";
             this.lblCD.Size = new System.Drawing.Size(331, 14);
-            this.lblCD.TabIndex = 57;
+            this.lblCD.TabIndex = 9;
             this.lblCD.Text = "No CD:";
             // 
             // chkIntro
             // 
             this.chkIntro.AutoSize = true;
-            this.chkIntro.Location = new System.Drawing.Point(146, 67);
+            this.chkIntro.Location = new System.Drawing.Point(146, 65);
             this.chkIntro.Name = "chkIntro";
             this.chkIntro.Size = new System.Drawing.Size(29, 17);
-            this.chkIntro.TabIndex = 56;
+            this.chkIntro.TabIndex = 2;
             this.chkIntro.Text = " ";
             this.chkIntro.UseVisualStyleBackColor = true;
             // 
@@ -531,16 +531,16 @@
             this.lblIntro.Location = new System.Drawing.Point(16, 67);
             this.lblIntro.Name = "lblIntro";
             this.lblIntro.Size = new System.Drawing.Size(331, 14);
-            this.lblIntro.TabIndex = 55;
+            this.lblIntro.TabIndex = 10;
             this.lblIntro.Text = "Play Intro:";
             // 
             // chkToolTips
             // 
             this.chkToolTips.AutoSize = true;
-            this.chkToolTips.Location = new System.Drawing.Point(146, 47);
+            this.chkToolTips.Location = new System.Drawing.Point(146, 45);
             this.chkToolTips.Name = "chkToolTips";
             this.chkToolTips.Size = new System.Drawing.Size(29, 17);
-            this.chkToolTips.TabIndex = 54;
+            this.chkToolTips.TabIndex = 1;
             this.chkToolTips.Text = " ";
             this.chkToolTips.UseVisualStyleBackColor = true;
             // 
@@ -549,7 +549,7 @@
             this.lblToolTips.Location = new System.Drawing.Point(16, 48);
             this.lblToolTips.Name = "lblToolTips";
             this.lblToolTips.Size = new System.Drawing.Size(331, 16);
-            this.lblToolTips.TabIndex = 53;
+            this.lblToolTips.TabIndex = 11;
             this.lblToolTips.Text = "Show tooltips:";
             // 
             // chkUnitActionLines
@@ -558,7 +558,7 @@
             this.chkUnitActionLines.Location = new System.Drawing.Point(146, 25);
             this.chkUnitActionLines.Name = "chkUnitActionLines";
             this.chkUnitActionLines.Size = new System.Drawing.Size(29, 17);
-            this.chkUnitActionLines.TabIndex = 52;
+            this.chkUnitActionLines.TabIndex = 0;
             this.chkUnitActionLines.Text = " ";
             this.chkUnitActionLines.UseVisualStyleBackColor = true;
             // 
@@ -567,7 +567,7 @@
             this.lblUnitActionLines.Location = new System.Drawing.Point(16, 25);
             this.lblUnitActionLines.Name = "lblUnitActionLines";
             this.lblUnitActionLines.Size = new System.Drawing.Size(331, 39);
-            this.lblUnitActionLines.TabIndex = 51;
+            this.lblUnitActionLines.TabIndex = 12;
             this.lblUnitActionLines.Text = "Show target lines:";
             // 
             // soundPage
@@ -600,7 +600,7 @@
             this.lblSound.Location = new System.Drawing.Point(5, 9);
             this.lblSound.Name = "lblSound";
             this.lblSound.Size = new System.Drawing.Size(38, 13);
-            this.lblSound.TabIndex = 54;
+            this.lblSound.TabIndex = 10;
             this.lblSound.Text = "Sound";
             // 
             // label3
@@ -645,7 +645,7 @@
             this.lblSoundVolume.Location = new System.Drawing.Point(12, 131);
             this.lblSoundVolume.Name = "lblSoundVolume";
             this.lblSoundVolume.Size = new System.Drawing.Size(78, 13);
-            this.lblSoundVolume.TabIndex = 41;
+            this.lblSoundVolume.TabIndex = 5;
             this.lblSoundVolume.Text = "Sound volume:";
             // 
             // trbSoundVolume
@@ -655,7 +655,7 @@
             this.trbSoundVolume.Maximum = 20;
             this.trbSoundVolume.Name = "trbSoundVolume";
             this.trbSoundVolume.Size = new System.Drawing.Size(121, 27);
-            this.trbSoundVolume.TabIndex = 42;
+            this.trbSoundVolume.TabIndex = 4;
             this.trbSoundVolume.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // lblVoiceVolume
@@ -664,7 +664,7 @@
             this.lblVoiceVolume.Location = new System.Drawing.Point(12, 103);
             this.lblVoiceVolume.Name = "lblVoiceVolume";
             this.lblVoiceVolume.Size = new System.Drawing.Size(79, 13);
-            this.lblVoiceVolume.TabIndex = 38;
+            this.lblVoiceVolume.TabIndex = 6;
             this.lblVoiceVolume.Text = "Voices volume:";
             // 
             // trbVoiceVolume
@@ -674,7 +674,7 @@
             this.trbVoiceVolume.Maximum = 20;
             this.trbVoiceVolume.Name = "trbVoiceVolume";
             this.trbVoiceVolume.Size = new System.Drawing.Size(121, 27);
-            this.trbVoiceVolume.TabIndex = 39;
+            this.trbVoiceVolume.TabIndex = 3;
             this.trbVoiceVolume.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // lblScoreVolume
@@ -683,7 +683,7 @@
             this.lblScoreVolume.Location = new System.Drawing.Point(12, 75);
             this.lblScoreVolume.Name = "lblScoreVolume";
             this.lblScoreVolume.Size = new System.Drawing.Size(75, 13);
-            this.lblScoreVolume.TabIndex = 35;
+            this.lblScoreVolume.TabIndex = 7;
             this.lblScoreVolume.Text = "Music volume:";
             // 
             // trbScoreVolume
@@ -693,7 +693,7 @@
             this.trbScoreVolume.Maximum = 20;
             this.trbScoreVolume.Name = "trbScoreVolume";
             this.trbScoreVolume.Size = new System.Drawing.Size(121, 27);
-            this.trbScoreVolume.TabIndex = 36;
+            this.trbScoreVolume.TabIndex = 2;
             this.trbScoreVolume.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // chkShuffle
@@ -702,7 +702,7 @@
             this.chkShuffle.Location = new System.Drawing.Point(142, 52);
             this.chkShuffle.Name = "chkShuffle";
             this.chkShuffle.Size = new System.Drawing.Size(29, 17);
-            this.chkShuffle.TabIndex = 34;
+            this.chkShuffle.TabIndex = 1;
             this.chkShuffle.Text = " ";
             this.chkShuffle.UseVisualStyleBackColor = true;
             // 
@@ -711,7 +711,7 @@
             this.lblShuffle.Location = new System.Drawing.Point(12, 52);
             this.lblShuffle.Name = "lblShuffle";
             this.lblShuffle.Size = new System.Drawing.Size(124, 15);
-            this.lblShuffle.TabIndex = 33;
+            this.lblShuffle.TabIndex = 8;
             this.lblShuffle.Text = "Shuffle music:";
             // 
             // chkRepeat
@@ -720,7 +720,7 @@
             this.chkRepeat.Location = new System.Drawing.Point(142, 30);
             this.chkRepeat.Name = "chkRepeat";
             this.chkRepeat.Size = new System.Drawing.Size(29, 17);
-            this.chkRepeat.TabIndex = 32;
+            this.chkRepeat.TabIndex = 0;
             this.chkRepeat.Text = " ";
             this.chkRepeat.UseVisualStyleBackColor = true;
             // 
@@ -729,7 +729,7 @@
             this.lblRepeat.Location = new System.Drawing.Point(12, 31);
             this.lblRepeat.Name = "lblRepeat";
             this.lblRepeat.Size = new System.Drawing.Size(141, 14);
-            this.lblRepeat.TabIndex = 31;
+            this.lblRepeat.TabIndex = 9;
             this.lblRepeat.Text = "Repeat music:";
             // 
             // SetupFrame
