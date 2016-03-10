@@ -54,16 +54,10 @@
     <ApplicationIcon>tsconfig.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B5D9CE02DF1ED31F16861F8899825165CAE294B0</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>TSconfig_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestCertificateThumbprint>7D9F5AD6595A94B72145ABE05A7F43AEF032AB45</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -291,6 +291,18 @@ namespace gui
         private void GP_DxWndRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             GP_DxWndWindowedCheckBox.Enabled = (GP_DxWndWindowBordersCheckBox.Enabled = GP_DxWndRadioButton.Checked);
+
+            chkWindowed.Enabled = !GP_DxWndRadioButton.Checked;
+            if (GP_DxWndRadioButton.Checked)
+                chkWindowed.Checked = false;
+        }
+
+
+        private void GP_TSDDrawRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            chkWindowed.Enabled = !GP_TSDDrawRadioButton.Checked;
+            if (GP_TSDDrawRadioButton.Checked)
+                chkWindowed.Checked = false;
         }
 
         private void GP_DxWndWinowedLabel_Click(object sender, EventArgs e)
@@ -347,6 +359,8 @@ namespace gui
                     TextBackgroundColor = 12;
             }
         }
+
+
 
     }
 }

@@ -247,6 +247,7 @@
             this.GP_TSDDrawRadioButton.TabIndex = 4;
             this.GP_TSDDrawRadioButton.TabStop = true;
             this.GP_TSDDrawRadioButton.UseVisualStyleBackColor = true;
+            this.GP_TSDDrawRadioButton.CheckedChanged += new System.EventHandler(this.GP_TSDDrawRadioButton_CheckedChanged);
             // 
             // GP_TSDDrawLabel
             // 
