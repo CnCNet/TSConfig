@@ -62,9 +62,6 @@
             this.cmbResolution = new System.Windows.Forms.ComboBox();
             this.gameOptionsPage = new System.Windows.Forms.TabPage();
             this.lblGameOptions = new System.Windows.Forms.Label();
-            this.btnColorSchemeEditor = new System.Windows.Forms.Button();
-            this.chkUseCustomColors = new System.Windows.Forms.CheckBox();
-            this.lblUseCustomColors = new System.Windows.Forms.Label();
             this.chkProcAffinity = new System.Windows.Forms.CheckBox();
             this.lblProcAffinity = new System.Windows.Forms.Label();
             this.chkCD = new System.Windows.Forms.CheckBox();
@@ -91,6 +88,11 @@
             this.lblShuffle = new System.Windows.Forms.Label();
             this.chkRepeat = new System.Windows.Forms.CheckBox();
             this.lblRepeat = new System.Windows.Forms.Label();
+            this.mpPage = new System.Windows.Forms.TabPage();
+            this.lblMP = new System.Windows.Forms.Label();
+            this.btnColorSchemeEditor = new System.Windows.Forms.Button();
+            this.chkUseCustomColors = new System.Windows.Forms.CheckBox();
+            this.lblUseCustomColors = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.videoPage.SuspendLayout();
             this.gameOptionsPage.SuspendLayout();
@@ -98,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trbSoundVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbVoiceVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbScoreVolume)).BeginInit();
+            this.mpPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOK
@@ -138,6 +141,7 @@
             this.tabControl.Controls.Add(this.videoPage);
             this.tabControl.Controls.Add(this.gameOptionsPage);
             this.tabControl.Controls.Add(this.soundPage);
+            this.tabControl.Controls.Add(this.mpPage);
             this.tabControl.Location = new System.Drawing.Point(3, 6);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -425,9 +429,6 @@
             // gameOptionsPage
             // 
             this.gameOptionsPage.Controls.Add(this.lblGameOptions);
-            this.gameOptionsPage.Controls.Add(this.btnColorSchemeEditor);
-            this.gameOptionsPage.Controls.Add(this.chkUseCustomColors);
-            this.gameOptionsPage.Controls.Add(this.lblUseCustomColors);
             this.gameOptionsPage.Controls.Add(this.chkProcAffinity);
             this.gameOptionsPage.Controls.Add(this.lblProcAffinity);
             this.gameOptionsPage.Controls.Add(this.chkCD);
@@ -454,32 +455,6 @@
             this.lblGameOptions.Size = new System.Drawing.Size(74, 13);
             this.lblGameOptions.TabIndex = 66;
             this.lblGameOptions.Text = "Game Options";
-            // 
-            // btnColorSchemeEditor
-            // 
-            this.btnColorSchemeEditor.Location = new System.Drawing.Point(164, 127);
-            this.btnColorSchemeEditor.Name = "btnColorSchemeEditor";
-            this.btnColorSchemeEditor.Size = new System.Drawing.Size(76, 22);
-            this.btnColorSchemeEditor.TabIndex = 6;
-            this.btnColorSchemeEditor.Text = "Edit Colors";
-            this.btnColorSchemeEditor.Click += new System.EventHandler(this.btnColorSchemeEditor_Click);
-            // 
-            // chkUseCustomColors
-            // 
-            this.chkUseCustomColors.Location = new System.Drawing.Point(146, 125);
-            this.chkUseCustomColors.Name = "chkUseCustomColors";
-            this.chkUseCustomColors.Size = new System.Drawing.Size(29, 17);
-            this.chkUseCustomColors.TabIndex = 5;
-            this.chkUseCustomColors.Text = " ";
-            this.chkUseCustomColors.UseVisualStyleBackColor = true;
-            // 
-            // lblUseCustomColors
-            // 
-            this.lblUseCustomColors.Location = new System.Drawing.Point(16, 127);
-            this.lblUseCustomColors.Name = "lblUseCustomColors";
-            this.lblUseCustomColors.Size = new System.Drawing.Size(145, 14);
-            this.lblUseCustomColors.TabIndex = 7;
-            this.lblUseCustomColors.Text = "Use Custom Colors:";
             // 
             // chkProcAffinity
             // 
@@ -733,6 +708,54 @@
             this.lblRepeat.TabIndex = 9;
             this.lblRepeat.Text = "Repeat music:";
             // 
+            // mpPage
+            // 
+            this.mpPage.Controls.Add(this.btnColorSchemeEditor);
+            this.mpPage.Controls.Add(this.chkUseCustomColors);
+            this.mpPage.Controls.Add(this.lblUseCustomColors);
+            this.mpPage.Controls.Add(this.lblMP);
+            this.mpPage.Location = new System.Drawing.Point(4, 22);
+            this.mpPage.Name = "mpPage";
+            this.mpPage.Padding = new System.Windows.Forms.Padding(3);
+            this.mpPage.Size = new System.Drawing.Size(293, 360);
+            this.mpPage.TabIndex = 3;
+            this.mpPage.Text = "Multiplayer";
+            this.mpPage.UseVisualStyleBackColor = true;
+            // 
+            // lblMP
+            // 
+            this.lblMP.AutoSize = true;
+            this.lblMP.Location = new System.Drawing.Point(7, 7);
+            this.lblMP.Name = "lblMP";
+            this.lblMP.Size = new System.Drawing.Size(57, 13);
+            this.lblMP.TabIndex = 0;
+            this.lblMP.Text = "Multiplayer";
+            // 
+            // btnColorSchemeEditor
+            // 
+            this.btnColorSchemeEditor.Location = new System.Drawing.Point(164, 29);
+            this.btnColorSchemeEditor.Name = "btnColorSchemeEditor";
+            this.btnColorSchemeEditor.Size = new System.Drawing.Size(76, 22);
+            this.btnColorSchemeEditor.TabIndex = 9;
+            this.btnColorSchemeEditor.Text = "Edit Colors";
+            // 
+            // chkUseCustomColors
+            // 
+            this.chkUseCustomColors.Location = new System.Drawing.Point(146, 27);
+            this.chkUseCustomColors.Name = "chkUseCustomColors";
+            this.chkUseCustomColors.Size = new System.Drawing.Size(29, 17);
+            this.chkUseCustomColors.TabIndex = 8;
+            this.chkUseCustomColors.Text = " ";
+            this.chkUseCustomColors.UseVisualStyleBackColor = true;
+            // 
+            // lblUseCustomColors
+            // 
+            this.lblUseCustomColors.Location = new System.Drawing.Point(16, 29);
+            this.lblUseCustomColors.Name = "lblUseCustomColors";
+            this.lblUseCustomColors.Size = new System.Drawing.Size(145, 14);
+            this.lblUseCustomColors.TabIndex = 10;
+            this.lblUseCustomColors.Text = "Use Custom Colors:";
+            // 
             // SetupFrame
             // 
             this.AcceptButton = this.btnOK;
@@ -761,6 +784,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trbSoundVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbVoiceVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbScoreVolume)).EndInit();
+            this.mpPage.ResumeLayout(false);
+            this.mpPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -793,9 +818,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbResolution;
         private System.Windows.Forms.TabPage gameOptionsPage;
-        private System.Windows.Forms.Button btnColorSchemeEditor;
-        private System.Windows.Forms.CheckBox chkUseCustomColors;
-        private System.Windows.Forms.Label lblUseCustomColors;
         private System.Windows.Forms.CheckBox chkProcAffinity;
         private System.Windows.Forms.Label lblProcAffinity;
         private System.Windows.Forms.CheckBox chkCD;
@@ -829,6 +851,11 @@
         private System.Windows.Forms.Label GP_DxWndWindowedLabel;
         private System.Windows.Forms.RadioButton GP_DxWndRadioButton;
         private System.Windows.Forms.Label GP_DxWndLabel;
+        private System.Windows.Forms.TabPage mpPage;
+        private System.Windows.Forms.Button btnColorSchemeEditor;
+        private System.Windows.Forms.CheckBox chkUseCustomColors;
+        private System.Windows.Forms.Label lblUseCustomColors;
+        private System.Windows.Forms.Label lblMP;
     }
 }
 
