@@ -739,7 +739,6 @@
             this.chkUseCustomColors.TabIndex = 8;
             this.chkUseCustomColors.Text = " ";
             this.chkUseCustomColors.UseVisualStyleBackColor = true;
-            this.chkUseCustomColors.Click += new System.EventHandler(this.lblUseCustomColors_Click);
             // 
             // lblUseCustomColors
             // 
@@ -748,6 +747,7 @@
             this.lblUseCustomColors.Size = new System.Drawing.Size(145, 14);
             this.lblUseCustomColors.TabIndex = 10;
             this.lblUseCustomColors.Text = "Use Custom Colors:";
+            this.lblUseCustomColors.Click += new System.EventHandler(this.lblUseCustomColors_Click);
             // 
             // lblMP
             // 

@@ -350,6 +350,7 @@ namespace gui
             if (TextBackgroundColor == 12)
                 d.BkgColor.Checked = true;
 
+
             d.ShowDialog();
             if (DialogResult.OK == d.DialogResult)
             {
@@ -359,8 +360,5 @@ namespace gui
                     TextBackgroundColor = 12;
             }
         }
-
-
-
     }
 }
