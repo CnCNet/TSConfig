@@ -51,9 +51,15 @@ namespace gui
             chkIntro.Checked = DomainController.Instance().getIntro();
             chkCD.Checked = DomainController.Instance().getCD();
             chkProcAffinity.Checked = DomainController.Instance().getProcAffinity();
-            trbScoreVolume.Value = Convert.ToInt32(DomainController.Instance().getScoreVolume() * 20);
-            trbVoiceVolume.Value = Convert.ToInt32(DomainController.Instance().getVoiceVolume() * 20);
-            trbSoundVolume.Value = Convert.ToInt32(DomainController.Instance().getSoundVolume() * 20);
+            try
+            {
+                trbScoreVolume.Value = Convert.ToInt32(DomainController.Instance().getScoreVolume() * 20);
+                trbVoiceVolume.Value = Convert.ToInt32(DomainController.Instance().getVoiceVolume() * 20);
+                trbSoundVolume.Value = Convert.ToInt32(DomainController.Instance().getSoundVolume() * 20);
+            }
+            catch
+            {
+            }
             chkUseCustomColors.Checked = DomainController.Instance().getOverrideColors();
             ColorOverrides = DomainController.Instance().getColorOverrides();
             TextBackgroundColor = DomainController.Instance().getTextBackgroundColor();

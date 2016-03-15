@@ -184,7 +184,7 @@ namespace tsconfig.domain
                 return false;
             else
             {
-                if ((Utilities.calculateMD5ForFile(_DxWndDll) == "fbca4b5586a037b45d6899d20f0d34f1") && (Utilities.calculateMD5ForFile(_DxWndDDrawDll) == "8fc928d399c4f068dda0ef1ff33daa84"))
+                if ((Utilities.calculateMD5ForFile(_DxWndDll) == "3d07d55f97fd767fb6d1a6e2bfdfaab2") && (Utilities.calculateMD5ForFile(_DxWndDDrawDll) == "dce24b62ae92ae172a5e02a5b182ff55"))
                     return true;
                 else
                     return false;
