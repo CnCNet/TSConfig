@@ -89,10 +89,10 @@
             this.chkRepeat = new System.Windows.Forms.CheckBox();
             this.lblRepeat = new System.Windows.Forms.Label();
             this.mpPage = new System.Windows.Forms.TabPage();
-            this.lblMP = new System.Windows.Forms.Label();
             this.btnColorSchemeEditor = new System.Windows.Forms.Button();
             this.chkUseCustomColors = new System.Windows.Forms.CheckBox();
             this.lblUseCustomColors = new System.Windows.Forms.Label();
+            this.lblMP = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.videoPage.SuspendLayout();
             this.gameOptionsPage.SuspendLayout();
@@ -722,15 +722,6 @@
             this.mpPage.Text = "Multiplayer";
             this.mpPage.UseVisualStyleBackColor = true;
             // 
-            // lblMP
-            // 
-            this.lblMP.AutoSize = true;
-            this.lblMP.Location = new System.Drawing.Point(7, 7);
-            this.lblMP.Name = "lblMP";
-            this.lblMP.Size = new System.Drawing.Size(57, 13);
-            this.lblMP.TabIndex = 0;
-            this.lblMP.Text = "Multiplayer";
-            // 
             // btnColorSchemeEditor
             // 
             this.btnColorSchemeEditor.Location = new System.Drawing.Point(164, 29);
@@ -738,6 +729,7 @@
             this.btnColorSchemeEditor.Size = new System.Drawing.Size(76, 22);
             this.btnColorSchemeEditor.TabIndex = 9;
             this.btnColorSchemeEditor.Text = "Edit Colors";
+            this.btnColorSchemeEditor.Click += new System.EventHandler(this.btnColorSchemeEditor_Click);
             // 
             // chkUseCustomColors
             // 
@@ -747,6 +739,7 @@
             this.chkUseCustomColors.TabIndex = 8;
             this.chkUseCustomColors.Text = " ";
             this.chkUseCustomColors.UseVisualStyleBackColor = true;
+            this.chkUseCustomColors.Click += new System.EventHandler(this.lblUseCustomColors_Click);
             // 
             // lblUseCustomColors
             // 
@@ -755,6 +748,15 @@
             this.lblUseCustomColors.Size = new System.Drawing.Size(145, 14);
             this.lblUseCustomColors.TabIndex = 10;
             this.lblUseCustomColors.Text = "Use Custom Colors:";
+            // 
+            // lblMP
+            // 
+            this.lblMP.AutoSize = true;
+            this.lblMP.Location = new System.Drawing.Point(7, 7);
+            this.lblMP.Name = "lblMP";
+            this.lblMP.Size = new System.Drawing.Size(57, 13);
+            this.lblMP.TabIndex = 0;
+            this.lblMP.Text = "Multiplayer";
             // 
             // SetupFrame
             // 
