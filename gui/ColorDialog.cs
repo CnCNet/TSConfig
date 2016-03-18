@@ -80,9 +80,11 @@ namespace gui
                 {
                     l.BorderStyle = BorderStyle.Fixed3D;
                 }
-                l.MouseEnter += new EventHandler ((sender, e) => EnterColor(sender, e, c));
+
+                var wwcolor = c;
+                l.MouseEnter += new EventHandler((sender, e) => EnterColor(sender, e, wwcolor));
                 l.MouseLeave += new EventHandler (LeaveColor);
-                l.MouseClick += new MouseEventHandler ((sender, e) => ClickColor(sender, e, l, c));
+                l.MouseClick += new MouseEventHandler((sender, e) => ClickColor(sender, e, l, wwcolor));
                 this.Controls.Add(l);
 
                 col += 1;
