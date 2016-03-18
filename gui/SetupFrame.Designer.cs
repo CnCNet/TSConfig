@@ -634,6 +634,7 @@
             this.trbSoundVolume.TabIndex = 4;
             this.trbSoundVolume.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trbSoundVolume.Value = 18;
+            this.trbSoundVolume.ValueChanged += new System.EventHandler(this.trbSoundVolume_ValueChanged);
             // 
             // lblVoiceVolume
             // 
@@ -654,6 +655,7 @@
             this.trbVoiceVolume.TabIndex = 3;
             this.trbVoiceVolume.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trbVoiceVolume.Value = 18;
+            this.trbVoiceVolume.ValueChanged += new System.EventHandler(this.trbVoiceVolume_ValueChanged);
             // 
             // lblScoreVolume
             // 
@@ -674,6 +676,7 @@
             this.trbScoreVolume.TabIndex = 2;
             this.trbScoreVolume.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trbScoreVolume.Value = 18;
+            this.trbScoreVolume.ValueChanged += new System.EventHandler(this.trbScoreVolume_ValueChanged);
             // 
             // chkShuffle
             // 
