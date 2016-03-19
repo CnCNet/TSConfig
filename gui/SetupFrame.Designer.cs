@@ -62,7 +62,7 @@
             this.lblVideo = new System.Windows.Forms.Label();
             this.chkWindowed = new System.Windows.Forms.CheckBox();
             this.lblWindowed = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblResolution = new System.Windows.Forms.Label();
             this.cmbResolution = new System.Windows.Forms.ComboBox();
             this.gameOptionsPage = new System.Windows.Forms.TabPage();
             this.lblGameOptions = new System.Windows.Forms.Label();
@@ -183,7 +183,7 @@
             this.videoPage.Controls.Add(this.lblVideo);
             this.videoPage.Controls.Add(this.chkWindowed);
             this.videoPage.Controls.Add(this.lblWindowed);
-            this.videoPage.Controls.Add(this.label1);
+            this.videoPage.Controls.Add(this.lblResolution);
             this.videoPage.Controls.Add(this.cmbResolution);
             this.videoPage.Location = new System.Drawing.Point(4, 22);
             this.videoPage.Name = "videoPage";
@@ -260,7 +260,7 @@
             // 
             this.GP_DxWndWindowBordersLabel.Location = new System.Drawing.Point(34, 326);
             this.GP_DxWndWindowBordersLabel.Name = "GP_DxWndWindowBordersLabel";
-            this.GP_DxWndWindowBordersLabel.Size = new System.Drawing.Size(230, 16);
+            this.GP_DxWndWindowBordersLabel.Size = new System.Drawing.Size(144, 16);
             this.GP_DxWndWindowBordersLabel.TabIndex = 12;
             this.GP_DxWndWindowBordersLabel.Text = "No window border";
             // 
@@ -279,14 +279,14 @@
             // 
             this.GP_DxWndWindowedLabel.Location = new System.Drawing.Point(34, 304);
             this.GP_DxWndWindowedLabel.Name = "GP_DxWndWindowedLabel";
-            this.GP_DxWndWindowedLabel.Size = new System.Drawing.Size(232, 18);
+            this.GP_DxWndWindowedLabel.Size = new System.Drawing.Size(144, 16);
             this.GP_DxWndWindowedLabel.TabIndex = 13;
             this.GP_DxWndWindowedLabel.Text = "Windowed Mode:";
             // 
             // GP_DxWndRadioButton
             // 
             this.GP_DxWndRadioButton.AutoSize = true;
-            this.GP_DxWndRadioButton.Location = new System.Drawing.Point(147, 279);
+            this.GP_DxWndRadioButton.Location = new System.Drawing.Point(146, 279);
             this.GP_DxWndRadioButton.Name = "GP_DxWndRadioButton";
             this.GP_DxWndRadioButton.Size = new System.Drawing.Size(14, 13);
             this.GP_DxWndRadioButton.TabIndex = 9;
@@ -298,7 +298,7 @@
             // 
             this.GP_DxWndLabel.Location = new System.Drawing.Point(17, 279);
             this.GP_DxWndLabel.Name = "GP_DxWndLabel";
-            this.GP_DxWndLabel.Size = new System.Drawing.Size(230, 15);
+            this.GP_DxWndLabel.Size = new System.Drawing.Size(230, 16);
             this.GP_DxWndLabel.TabIndex = 14;
             this.GP_DxWndLabel.Text = "DxWnd:";
             this.GP_DxWndLabel.Click += new System.EventHandler(this.GP_DxWndLabel_Click);
@@ -306,7 +306,7 @@
             // GP_TSDDrawRadioButton
             // 
             this.GP_TSDDrawRadioButton.AutoSize = true;
-            this.GP_TSDDrawRadioButton.Location = new System.Drawing.Point(147, 139);
+            this.GP_TSDDrawRadioButton.Location = new System.Drawing.Point(146, 139);
             this.GP_TSDDrawRadioButton.Name = "GP_TSDDrawRadioButton";
             this.GP_TSDDrawRadioButton.Size = new System.Drawing.Size(14, 13);
             this.GP_TSDDrawRadioButton.TabIndex = 4;
@@ -316,9 +316,9 @@
             // 
             // GP_TSDDrawLabel
             // 
-            this.GP_TSDDrawLabel.Location = new System.Drawing.Point(17, 142);
+            this.GP_TSDDrawLabel.Location = new System.Drawing.Point(17, 138);
             this.GP_TSDDrawLabel.Name = "GP_TSDDrawLabel";
-            this.GP_TSDDrawLabel.Size = new System.Drawing.Size(230, 15);
+            this.GP_TSDDrawLabel.Size = new System.Drawing.Size(144, 16);
             this.GP_TSDDrawLabel.TabIndex = 19;
             this.GP_TSDDrawLabel.Text = "TS-DDraw:";
             // 
@@ -337,7 +337,7 @@
             // 
             this.GP_FakeVsyncLabel.Location = new System.Drawing.Point(34, 232);
             this.GP_FakeVsyncLabel.Name = "GP_FakeVsyncLabel";
-            this.GP_FakeVsyncLabel.Size = new System.Drawing.Size(230, 16);
+            this.GP_FakeVsyncLabel.Size = new System.Drawing.Size(144, 16);
             this.GP_FakeVsyncLabel.TabIndex = 15;
             this.GP_FakeVsyncLabel.Text = "Fake Vsync:";
             // 
@@ -356,14 +356,14 @@
             // 
             this.GP_NoVideoMemoryLabel.Location = new System.Drawing.Point(34, 210);
             this.GP_NoVideoMemoryLabel.Name = "GP_NoVideoMemoryLabel";
-            this.GP_NoVideoMemoryLabel.Size = new System.Drawing.Size(232, 18);
+            this.GP_NoVideoMemoryLabel.Size = new System.Drawing.Size(144, 16);
             this.GP_NoVideoMemoryLabel.TabIndex = 16;
             this.GP_NoVideoMemoryLabel.Text = "No Video Memory:";
             // 
             // GP_ddwrapperRadioButton
             // 
             this.GP_ddwrapperRadioButton.AutoSize = true;
-            this.GP_ddwrapperRadioButton.Location = new System.Drawing.Point(147, 185);
+            this.GP_ddwrapperRadioButton.Location = new System.Drawing.Point(146, 185);
             this.GP_ddwrapperRadioButton.Name = "GP_ddwrapperRadioButton";
             this.GP_ddwrapperRadioButton.Size = new System.Drawing.Size(14, 13);
             this.GP_ddwrapperRadioButton.TabIndex = 6;
@@ -374,7 +374,7 @@
             // GP_IEddrawRadioButton
             // 
             this.GP_IEddrawRadioButton.AutoSize = true;
-            this.GP_IEddrawRadioButton.Location = new System.Drawing.Point(147, 162);
+            this.GP_IEddrawRadioButton.Location = new System.Drawing.Point(146, 162);
             this.GP_IEddrawRadioButton.Name = "GP_IEddrawRadioButton";
             this.GP_IEddrawRadioButton.Size = new System.Drawing.Size(14, 13);
             this.GP_IEddrawRadioButton.TabIndex = 5;
@@ -384,7 +384,7 @@
             // GP_DisabledRadioButton
             // 
             this.GP_DisabledRadioButton.AutoSize = true;
-            this.GP_DisabledRadioButton.Location = new System.Drawing.Point(147, 116);
+            this.GP_DisabledRadioButton.Location = new System.Drawing.Point(146, 116);
             this.GP_DisabledRadioButton.Name = "GP_DisabledRadioButton";
             this.GP_DisabledRadioButton.Size = new System.Drawing.Size(14, 13);
             this.GP_DisabledRadioButton.TabIndex = 3;
@@ -393,17 +393,17 @@
             // 
             // GP_ddwrapperLabel
             // 
-            this.GP_ddwrapperLabel.Location = new System.Drawing.Point(17, 184);
+            this.GP_ddwrapperLabel.Location = new System.Drawing.Point(17, 182);
             this.GP_ddwrapperLabel.Name = "GP_ddwrapperLabel";
-            this.GP_ddwrapperLabel.Size = new System.Drawing.Size(230, 15);
+            this.GP_ddwrapperLabel.Size = new System.Drawing.Size(144, 16);
             this.GP_ddwrapperLabel.TabIndex = 17;
             this.GP_ddwrapperLabel.Text = "ddwrapper:";
             // 
             // GP_IEddrawLabel
             // 
-            this.GP_IEddrawLabel.Location = new System.Drawing.Point(17, 164);
+            this.GP_IEddrawLabel.Location = new System.Drawing.Point(17, 160);
             this.GP_IEddrawLabel.Name = "GP_IEddrawLabel";
-            this.GP_IEddrawLabel.Size = new System.Drawing.Size(230, 13);
+            this.GP_IEddrawLabel.Size = new System.Drawing.Size(144, 16);
             this.GP_IEddrawLabel.TabIndex = 18;
             this.GP_IEddrawLabel.Text = "IE-ddraw:";
             // 
@@ -411,7 +411,7 @@
             // 
             this.GP_DisabledLabel.Location = new System.Drawing.Point(17, 116);
             this.GP_DisabledLabel.Name = "GP_DisabledLabel";
-            this.GP_DisabledLabel.Size = new System.Drawing.Size(230, 19);
+            this.GP_DisabledLabel.Size = new System.Drawing.Size(144, 16);
             this.GP_DisabledLabel.TabIndex = 20;
             this.GP_DisabledLabel.Text = "Default:";
             // 
@@ -427,7 +427,7 @@
             // chkBackbuffer
             // 
             this.chkBackbuffer.AutoSize = true;
-            this.chkBackbuffer.Location = new System.Drawing.Point(147, 68);
+            this.chkBackbuffer.Location = new System.Drawing.Point(146, 66);
             this.chkBackbuffer.Name = "chkBackbuffer";
             this.chkBackbuffer.Size = new System.Drawing.Size(29, 17);
             this.chkBackbuffer.TabIndex = 2;
@@ -438,14 +438,14 @@
             // 
             this.lblBackbuffer.Location = new System.Drawing.Point(17, 68);
             this.lblBackbuffer.Name = "lblBackbuffer";
-            this.lblBackbuffer.Size = new System.Drawing.Size(344, 14);
+            this.lblBackbuffer.Size = new System.Drawing.Size(92, 16);
             this.lblBackbuffer.TabIndex = 22;
             this.lblBackbuffer.Text = "Graphics Patch:";
             // 
             // lblVideo
             // 
             this.lblVideo.AutoSize = true;
-            this.lblVideo.Location = new System.Drawing.Point(4, 1);
+            this.lblVideo.Location = new System.Drawing.Point(4, 3);
             this.lblVideo.Name = "lblVideo";
             this.lblVideo.Size = new System.Drawing.Size(34, 13);
             this.lblVideo.TabIndex = 25;
@@ -454,7 +454,7 @@
             // chkWindowed
             // 
             this.chkWindowed.AutoSize = true;
-            this.chkWindowed.Location = new System.Drawing.Point(147, 45);
+            this.chkWindowed.Location = new System.Drawing.Point(146, 43);
             this.chkWindowed.Name = "chkWindowed";
             this.chkWindowed.Size = new System.Drawing.Size(29, 17);
             this.chkWindowed.TabIndex = 1;
@@ -463,26 +463,26 @@
             // 
             // lblWindowed
             // 
-            this.lblWindowed.Location = new System.Drawing.Point(17, 47);
+            this.lblWindowed.Location = new System.Drawing.Point(17, 44);
             this.lblWindowed.Name = "lblWindowed";
-            this.lblWindowed.Size = new System.Drawing.Size(344, 14);
+            this.lblWindowed.Size = new System.Drawing.Size(92, 16);
             this.lblWindowed.TabIndex = 23;
             this.lblWindowed.Text = "Windowed Mode:";
             // 
-            // label1
+            // lblResolution
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Screen resolution:";
+            this.lblResolution.AutoSize = true;
+            this.lblResolution.Location = new System.Drawing.Point(17, 23);
+            this.lblResolution.Name = "lblResolution";
+            this.lblResolution.Size = new System.Drawing.Size(92, 13);
+            this.lblResolution.TabIndex = 24;
+            this.lblResolution.Text = "Screen resolution:";
             // 
             // cmbResolution
             // 
             this.cmbResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbResolution.FormattingEnabled = true;
-            this.cmbResolution.Location = new System.Drawing.Point(147, 19);
+            this.cmbResolution.Location = new System.Drawing.Point(147, 18);
             this.cmbResolution.Name = "cmbResolution";
             this.cmbResolution.Size = new System.Drawing.Size(119, 21);
             this.cmbResolution.TabIndex = 0;
@@ -529,9 +529,9 @@
             // 
             // lblProcAffinity
             // 
-            this.lblProcAffinity.Location = new System.Drawing.Point(16, 107);
+            this.lblProcAffinity.Location = new System.Drawing.Point(16, 105);
             this.lblProcAffinity.Name = "lblProcAffinity";
-            this.lblProcAffinity.Size = new System.Drawing.Size(297, 14);
+            this.lblProcAffinity.Size = new System.Drawing.Size(143, 14);
             this.lblProcAffinity.TabIndex = 8;
             this.lblProcAffinity.Text = "Single Processor Affinity:";
             // 
@@ -547,9 +547,9 @@
             // 
             // lblCD
             // 
-            this.lblCD.Location = new System.Drawing.Point(16, 87);
+            this.lblCD.Location = new System.Drawing.Point(16, 85);
             this.lblCD.Name = "lblCD";
-            this.lblCD.Size = new System.Drawing.Size(331, 14);
+            this.lblCD.Size = new System.Drawing.Size(143, 14);
             this.lblCD.TabIndex = 9;
             this.lblCD.Text = "No CD:";
             // 
@@ -565,9 +565,9 @@
             // 
             // lblIntro
             // 
-            this.lblIntro.Location = new System.Drawing.Point(16, 67);
+            this.lblIntro.Location = new System.Drawing.Point(16, 65);
             this.lblIntro.Name = "lblIntro";
-            this.lblIntro.Size = new System.Drawing.Size(331, 14);
+            this.lblIntro.Size = new System.Drawing.Size(143, 14);
             this.lblIntro.TabIndex = 10;
             this.lblIntro.Text = "Play Intro:";
             // 
@@ -583,9 +583,9 @@
             // 
             // lblToolTips
             // 
-            this.lblToolTips.Location = new System.Drawing.Point(16, 48);
+            this.lblToolTips.Location = new System.Drawing.Point(16, 45);
             this.lblToolTips.Name = "lblToolTips";
-            this.lblToolTips.Size = new System.Drawing.Size(331, 16);
+            this.lblToolTips.Size = new System.Drawing.Size(143, 14);
             this.lblToolTips.TabIndex = 11;
             this.lblToolTips.Text = "Show tooltips:";
             // 
@@ -603,7 +603,7 @@
             // 
             this.lblUnitActionLines.Location = new System.Drawing.Point(16, 25);
             this.lblUnitActionLines.Name = "lblUnitActionLines";
-            this.lblUnitActionLines.Size = new System.Drawing.Size(331, 39);
+            this.lblUnitActionLines.Size = new System.Drawing.Size(143, 14);
             this.lblUnitActionLines.TabIndex = 12;
             this.lblUnitActionLines.Text = "Show target lines:";
             // 
@@ -634,7 +634,7 @@
             // lblSound
             // 
             this.lblSound.AutoSize = true;
-            this.lblSound.Location = new System.Drawing.Point(5, 9);
+            this.lblSound.Location = new System.Drawing.Point(3, 3);
             this.lblSound.Name = "lblSound";
             this.lblSound.Size = new System.Drawing.Size(38, 13);
             this.lblSound.TabIndex = 10;
@@ -652,7 +652,7 @@
             // lblSoundVolumeValue
             // 
             this.lblSoundVolumeValue.AutoSize = true;
-            this.lblSoundVolumeValue.Location = new System.Drawing.Point(261, 131);
+            this.lblSoundVolumeValue.Location = new System.Drawing.Point(265, 125);
             this.lblSoundVolumeValue.Name = "lblSoundVolumeValue";
             this.lblSoundVolumeValue.Size = new System.Drawing.Size(27, 13);
             this.lblSoundVolumeValue.TabIndex = 43;
@@ -661,7 +661,7 @@
             // lblVoiceVolumeValue
             // 
             this.lblVoiceVolumeValue.AutoSize = true;
-            this.lblVoiceVolumeValue.Location = new System.Drawing.Point(261, 103);
+            this.lblVoiceVolumeValue.Location = new System.Drawing.Point(265, 97);
             this.lblVoiceVolumeValue.Name = "lblVoiceVolumeValue";
             this.lblVoiceVolumeValue.Size = new System.Drawing.Size(27, 13);
             this.lblVoiceVolumeValue.TabIndex = 40;
@@ -670,7 +670,7 @@
             // lblScoreVolumeValue
             // 
             this.lblScoreVolumeValue.AutoSize = true;
-            this.lblScoreVolumeValue.Location = new System.Drawing.Point(261, 75);
+            this.lblScoreVolumeValue.Location = new System.Drawing.Point(265, 69);
             this.lblScoreVolumeValue.Name = "lblScoreVolumeValue";
             this.lblScoreVolumeValue.Size = new System.Drawing.Size(27, 13);
             this.lblScoreVolumeValue.TabIndex = 37;
@@ -679,7 +679,7 @@
             // lblSoundVolume
             // 
             this.lblSoundVolume.AutoSize = true;
-            this.lblSoundVolume.Location = new System.Drawing.Point(12, 131);
+            this.lblSoundVolume.Location = new System.Drawing.Point(16, 125);
             this.lblSoundVolume.Name = "lblSoundVolume";
             this.lblSoundVolume.Size = new System.Drawing.Size(78, 13);
             this.lblSoundVolume.TabIndex = 5;
@@ -688,7 +688,7 @@
             // trbSoundVolume
             // 
             this.trbSoundVolume.AutoSize = false;
-            this.trbSoundVolume.Location = new System.Drawing.Point(134, 126);
+            this.trbSoundVolume.Location = new System.Drawing.Point(138, 120);
             this.trbSoundVolume.Maximum = 20;
             this.trbSoundVolume.Name = "trbSoundVolume";
             this.trbSoundVolume.Size = new System.Drawing.Size(121, 27);
@@ -700,7 +700,7 @@
             // lblVoiceVolume
             // 
             this.lblVoiceVolume.AutoSize = true;
-            this.lblVoiceVolume.Location = new System.Drawing.Point(12, 103);
+            this.lblVoiceVolume.Location = new System.Drawing.Point(16, 97);
             this.lblVoiceVolume.Name = "lblVoiceVolume";
             this.lblVoiceVolume.Size = new System.Drawing.Size(79, 13);
             this.lblVoiceVolume.TabIndex = 6;
@@ -709,7 +709,7 @@
             // trbVoiceVolume
             // 
             this.trbVoiceVolume.AutoSize = false;
-            this.trbVoiceVolume.Location = new System.Drawing.Point(134, 98);
+            this.trbVoiceVolume.Location = new System.Drawing.Point(138, 92);
             this.trbVoiceVolume.Maximum = 20;
             this.trbVoiceVolume.Name = "trbVoiceVolume";
             this.trbVoiceVolume.Size = new System.Drawing.Size(121, 27);
@@ -721,7 +721,7 @@
             // lblScoreVolume
             // 
             this.lblScoreVolume.AutoSize = true;
-            this.lblScoreVolume.Location = new System.Drawing.Point(12, 75);
+            this.lblScoreVolume.Location = new System.Drawing.Point(16, 69);
             this.lblScoreVolume.Name = "lblScoreVolume";
             this.lblScoreVolume.Size = new System.Drawing.Size(75, 13);
             this.lblScoreVolume.TabIndex = 7;
@@ -730,7 +730,7 @@
             // trbScoreVolume
             // 
             this.trbScoreVolume.AutoSize = false;
-            this.trbScoreVolume.Location = new System.Drawing.Point(134, 70);
+            this.trbScoreVolume.Location = new System.Drawing.Point(138, 64);
             this.trbScoreVolume.Maximum = 20;
             this.trbScoreVolume.Name = "trbScoreVolume";
             this.trbScoreVolume.Size = new System.Drawing.Size(121, 27);
@@ -742,7 +742,7 @@
             // chkShuffle
             // 
             this.chkShuffle.AutoSize = true;
-            this.chkShuffle.Location = new System.Drawing.Point(142, 52);
+            this.chkShuffle.Location = new System.Drawing.Point(146, 46);
             this.chkShuffle.Name = "chkShuffle";
             this.chkShuffle.Size = new System.Drawing.Size(29, 17);
             this.chkShuffle.TabIndex = 1;
@@ -751,16 +751,16 @@
             // 
             // lblShuffle
             // 
-            this.lblShuffle.Location = new System.Drawing.Point(12, 52);
+            this.lblShuffle.Location = new System.Drawing.Point(16, 46);
             this.lblShuffle.Name = "lblShuffle";
-            this.lblShuffle.Size = new System.Drawing.Size(124, 15);
+            this.lblShuffle.Size = new System.Drawing.Size(78, 13);
             this.lblShuffle.TabIndex = 8;
             this.lblShuffle.Text = "Shuffle music:";
             // 
             // chkRepeat
             // 
             this.chkRepeat.AutoSize = true;
-            this.chkRepeat.Location = new System.Drawing.Point(142, 30);
+            this.chkRepeat.Location = new System.Drawing.Point(146, 24);
             this.chkRepeat.Name = "chkRepeat";
             this.chkRepeat.Size = new System.Drawing.Size(29, 17);
             this.chkRepeat.TabIndex = 0;
@@ -769,9 +769,9 @@
             // 
             // lblRepeat
             // 
-            this.lblRepeat.Location = new System.Drawing.Point(12, 31);
+            this.lblRepeat.Location = new System.Drawing.Point(16, 25);
             this.lblRepeat.Name = "lblRepeat";
-            this.lblRepeat.Size = new System.Drawing.Size(141, 14);
+            this.lblRepeat.Size = new System.Drawing.Size(78, 13);
             this.lblRepeat.TabIndex = 9;
             this.lblRepeat.Text = "Repeat music:";
             // 
@@ -791,7 +791,7 @@
             // 
             // btnColorSchemeEditor
             // 
-            this.btnColorSchemeEditor.Location = new System.Drawing.Point(164, 29);
+            this.btnColorSchemeEditor.Location = new System.Drawing.Point(167, 22);
             this.btnColorSchemeEditor.Name = "btnColorSchemeEditor";
             this.btnColorSchemeEditor.Size = new System.Drawing.Size(76, 22);
             this.btnColorSchemeEditor.TabIndex = 9;
@@ -819,7 +819,7 @@
             // lblMP
             // 
             this.lblMP.AutoSize = true;
-            this.lblMP.Location = new System.Drawing.Point(7, 7);
+            this.lblMP.Location = new System.Drawing.Point(3, 3);
             this.lblMP.Name = "lblMP";
             this.lblMP.Size = new System.Drawing.Size(57, 13);
             this.lblMP.TabIndex = 0;
@@ -884,7 +884,7 @@
         private System.Windows.Forms.Label lblVideo;
         private System.Windows.Forms.CheckBox chkWindowed;
         private System.Windows.Forms.Label lblWindowed;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblResolution;
         private System.Windows.Forms.ComboBox cmbResolution;
         private System.Windows.Forms.TabPage gameOptionsPage;
         private System.Windows.Forms.CheckBox chkProcAffinity;
