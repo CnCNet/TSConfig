@@ -184,7 +184,7 @@ namespace tsconfig.domain
                 return false;
             else
             {
-                if ((Utilities.calculateMD5ForFile(_DxWndDll) == "3d07d55f97fd767fb6d1a6e2bfdfaab2") && (Utilities.calculateMD5ForFile(_DxWndDDrawDll) == "dce24b62ae92ae172a5e02a5b182ff55"))
+                if ((Utilities.calculateMD5ForFile(_DxWndDll) == "3d07d55f97fd767fb6d1a6e2bfdfaab2") && (Utilities.calculateMD5ForFile(_DxWndDDrawDll) == "fbbf707204517c3acf3d165ee580593d"))
                     return true;
                 else
                     return false;
@@ -248,6 +248,16 @@ namespace tsconfig.domain
             return dxwnd_ini.getBoolValue("DxWnd", "NoWindowFrame", false);
         }
 
+        public bool getDxDirectDrawEmulation()
+        {
+            return dxwnd_ini.getBoolValue("DxWnd", "ForceDirectDrawEmulation", false);
+        }
+
+        public int getDxEmulationType()
+        {
+            return dxwnd_ini.getIntValue("DxWnd", "Emulation", 1);
+        }
+
         public bool getNoVideoMemory()
         {
             return ddwrapperCfg.getBoolValue("ddraw", "NoVideoMemory", false);
@@ -256,6 +266,11 @@ namespace tsconfig.domain
         public bool getFakeVsync()
         {
             return ddwrapperCfg.getBoolValue("ddraw", "FakeVsync", false);
+        }
+
+        public bool getDirectDrawEmulation()
+        {
+            return ddwrapperCfg.getBoolValue("ddraw", "ForceDirectDrawEmulation", false);
         }
 
         public Boolean saveSettings(
@@ -275,12 +290,15 @@ namespace tsconfig.domain
             bool _GP_IEddraw, 
             bool _GP_ddwrapper, 
             bool _GP_NoVideoMemory, 
-            bool _GP_FakeVsync, 
+            bool _GP_FakeVsync,
+            bool ddEmulation,
+            int dxEmulationType,
             bool _GP_TSDDraw,
             bool _GP_dxwnd,
             bool _GP_DxWndEnabled,
             bool _GP_DxWndWindow,
             bool _GP_DxWndWindowFrame,
+            bool dxDDEmulation,
             bool procAffinity, 
             WWColor[] ColorOverrides, 
             Boolean OverrideColors, 
@@ -325,6 +343,7 @@ namespace tsconfig.domain
 
             ddwrapperCfg.setBoolValue("ddraw", "NoVideoMemory", _GP_NoVideoMemory);
             ddwrapperCfg.setBoolValue("ddraw", "FakeVsync", _GP_FakeVsync);
+            ddwrapperCfg.setBoolValue("ddraw", "ForceDirectDrawEmulation", ddEmulation);
 
             if (!File.Exists(ProgramConstants.gamepath + ProgramConstants.DDWRAPPER_SETTINGS))
                 GameFileManagement.WriteddwrapperCfg();
@@ -332,6 +351,8 @@ namespace tsconfig.domain
             dxwnd_ini.setBoolValue("DxWnd", "NoWindowFrame", _GP_DxWndWindowFrame);
             dxwnd_ini.setBoolValue("DxWnd", "Enabled", _GP_DxWndEnabled);
             dxwnd_ini.setBoolValue("DxWnd", "RunInWindow", _GP_DxWndWindow);
+            dxwnd_ini.setBoolValue("DxWnd", "ForceDirectDrawEmulation", dxDDEmulation);
+            dxwnd_ini.setIntValue("DxWnd", "Emulation", dxEmulationType);
 
             if (!File.Exists(ProgramConstants.gamepath + ProgramConstants.DXWND_SETTINGS))
                 GameFileManagement.Writedxwnd_ini();

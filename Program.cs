@@ -14,7 +14,7 @@ namespace tsconfig
         [STAThread]
         static void Main()
         {
-            //Clipboard.SetText(Utilities.calculateMD5ForFile("ddraw.dll")); return;
+            //Clipboard.SetText(Utilities.calculateMD5ForFile("dxwnd.dll")); return;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DomainController.Instance();

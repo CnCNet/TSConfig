@@ -93,6 +93,10 @@
             this.chkUseCustomColors = new System.Windows.Forms.CheckBox();
             this.lblUseCustomColors = new System.Windows.Forms.Label();
             this.lblMP = new System.Windows.Forms.Label();
+            this.DirectDrawEmulationCheckBox = new System.Windows.Forms.CheckBox();
+            this.DxDirectDrawEmulationCheckBox = new System.Windows.Forms.CheckBox();
+            this.DxWndEmulationLabel = new System.Windows.Forms.Label();
+            this.DxEmulationComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl.SuspendLayout();
             this.videoPage.SuspendLayout();
             this.gameOptionsPage.SuspendLayout();
@@ -106,7 +110,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnOK.Location = new System.Drawing.Point(12, 398);
+            this.btnOK.Location = new System.Drawing.Point(12, 430);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 1;
@@ -118,7 +122,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(222, 398);
+            this.btnCancel.Location = new System.Drawing.Point(222, 430);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -128,7 +132,8 @@
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(125, 398);
+            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnApply.Location = new System.Drawing.Point(119, 430);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
             this.btnApply.TabIndex = 2;
@@ -145,11 +150,15 @@
             this.tabControl.Location = new System.Drawing.Point(3, 6);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(301, 386);
+            this.tabControl.Size = new System.Drawing.Size(301, 418);
             this.tabControl.TabIndex = 0;
             // 
             // videoPage
             // 
+            this.videoPage.Controls.Add(this.DxEmulationComboBox);
+            this.videoPage.Controls.Add(this.DxWndEmulationLabel);
+            this.videoPage.Controls.Add(this.DxDirectDrawEmulationCheckBox);
+            this.videoPage.Controls.Add(this.DirectDrawEmulationCheckBox);
             this.videoPage.Controls.Add(this.GP_DxWndWindowBordersCheckBox);
             this.videoPage.Controls.Add(this.GP_DxWndWindowBordersLabel);
             this.videoPage.Controls.Add(this.GP_DxWndWindowedCheckBox);
@@ -179,7 +188,7 @@
             this.videoPage.Location = new System.Drawing.Point(4, 22);
             this.videoPage.Name = "videoPage";
             this.videoPage.Padding = new System.Windows.Forms.Padding(3);
-            this.videoPage.Size = new System.Drawing.Size(293, 360);
+            this.videoPage.Size = new System.Drawing.Size(293, 392);
             this.videoPage.TabIndex = 0;
             this.videoPage.Text = "Video";
             this.videoPage.UseVisualStyleBackColor = true;
@@ -188,7 +197,7 @@
             // 
             this.GP_DxWndWindowBordersCheckBox.AutoSize = true;
             this.GP_DxWndWindowBordersCheckBox.Enabled = false;
-            this.GP_DxWndWindowBordersCheckBox.Location = new System.Drawing.Point(164, 302);
+            this.GP_DxWndWindowBordersCheckBox.Location = new System.Drawing.Point(164, 325);
             this.GP_DxWndWindowBordersCheckBox.Name = "GP_DxWndWindowBordersCheckBox";
             this.GP_DxWndWindowBordersCheckBox.Size = new System.Drawing.Size(29, 17);
             this.GP_DxWndWindowBordersCheckBox.TabIndex = 11;
@@ -197,7 +206,7 @@
             // 
             // GP_DxWndWindowBordersLabel
             // 
-            this.GP_DxWndWindowBordersLabel.Location = new System.Drawing.Point(34, 303);
+            this.GP_DxWndWindowBordersLabel.Location = new System.Drawing.Point(34, 326);
             this.GP_DxWndWindowBordersLabel.Name = "GP_DxWndWindowBordersLabel";
             this.GP_DxWndWindowBordersLabel.Size = new System.Drawing.Size(230, 16);
             this.GP_DxWndWindowBordersLabel.TabIndex = 12;
@@ -207,7 +216,7 @@
             // 
             this.GP_DxWndWindowedCheckBox.AutoSize = true;
             this.GP_DxWndWindowedCheckBox.Enabled = false;
-            this.GP_DxWndWindowedCheckBox.Location = new System.Drawing.Point(164, 280);
+            this.GP_DxWndWindowedCheckBox.Location = new System.Drawing.Point(164, 303);
             this.GP_DxWndWindowedCheckBox.Name = "GP_DxWndWindowedCheckBox";
             this.GP_DxWndWindowedCheckBox.Size = new System.Drawing.Size(29, 17);
             this.GP_DxWndWindowedCheckBox.TabIndex = 10;
@@ -216,7 +225,7 @@
             // 
             // GP_DxWndWindowedLabel
             // 
-            this.GP_DxWndWindowedLabel.Location = new System.Drawing.Point(34, 281);
+            this.GP_DxWndWindowedLabel.Location = new System.Drawing.Point(34, 304);
             this.GP_DxWndWindowedLabel.Name = "GP_DxWndWindowedLabel";
             this.GP_DxWndWindowedLabel.Size = new System.Drawing.Size(232, 18);
             this.GP_DxWndWindowedLabel.TabIndex = 13;
@@ -225,7 +234,7 @@
             // GP_DxWndRadioButton
             // 
             this.GP_DxWndRadioButton.AutoSize = true;
-            this.GP_DxWndRadioButton.Location = new System.Drawing.Point(147, 256);
+            this.GP_DxWndRadioButton.Location = new System.Drawing.Point(147, 279);
             this.GP_DxWndRadioButton.Name = "GP_DxWndRadioButton";
             this.GP_DxWndRadioButton.Size = new System.Drawing.Size(14, 13);
             this.GP_DxWndRadioButton.TabIndex = 9;
@@ -235,7 +244,7 @@
             // 
             // GP_DxWndLabel
             // 
-            this.GP_DxWndLabel.Location = new System.Drawing.Point(17, 256);
+            this.GP_DxWndLabel.Location = new System.Drawing.Point(17, 279);
             this.GP_DxWndLabel.Name = "GP_DxWndLabel";
             this.GP_DxWndLabel.Size = new System.Drawing.Size(230, 15);
             this.GP_DxWndLabel.TabIndex = 14;
@@ -442,7 +451,7 @@
             this.gameOptionsPage.Location = new System.Drawing.Point(4, 22);
             this.gameOptionsPage.Name = "gameOptionsPage";
             this.gameOptionsPage.Padding = new System.Windows.Forms.Padding(3);
-            this.gameOptionsPage.Size = new System.Drawing.Size(293, 360);
+            this.gameOptionsPage.Size = new System.Drawing.Size(293, 392);
             this.gameOptionsPage.TabIndex = 1;
             this.gameOptionsPage.Text = "Game Options";
             this.gameOptionsPage.UseVisualStyleBackColor = true;
@@ -565,7 +574,7 @@
             this.soundPage.Controls.Add(this.lblRepeat);
             this.soundPage.Location = new System.Drawing.Point(4, 22);
             this.soundPage.Name = "soundPage";
-            this.soundPage.Size = new System.Drawing.Size(293, 360);
+            this.soundPage.Size = new System.Drawing.Size(293, 392);
             this.soundPage.TabIndex = 2;
             this.soundPage.Text = "Sound";
             this.soundPage.UseVisualStyleBackColor = true;
@@ -723,7 +732,7 @@
             this.mpPage.Location = new System.Drawing.Point(4, 22);
             this.mpPage.Name = "mpPage";
             this.mpPage.Padding = new System.Windows.Forms.Padding(3);
-            this.mpPage.Size = new System.Drawing.Size(293, 360);
+            this.mpPage.Size = new System.Drawing.Size(293, 392);
             this.mpPage.TabIndex = 3;
             this.mpPage.Text = "Multiplayer";
             this.mpPage.UseVisualStyleBackColor = true;
@@ -764,13 +773,62 @@
             this.lblMP.TabIndex = 0;
             this.lblMP.Text = "Multiplayer";
             // 
+            // DirectDrawEmulationCheckBox
+            // 
+            this.DirectDrawEmulationCheckBox.Location = new System.Drawing.Point(31, 253);
+            this.DirectDrawEmulationCheckBox.Name = "DirectDrawEmulationCheckBox";
+            this.DirectDrawEmulationCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DirectDrawEmulationCheckBox.Size = new System.Drawing.Size(147, 17);
+            this.DirectDrawEmulationCheckBox.TabIndex = 26;
+            this.DirectDrawEmulationCheckBox.Text = "DirectDraw Emulation";
+            this.DirectDrawEmulationCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DirectDrawEmulationCheckBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.DirectDrawEmulationCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // DxDirectDrawEmulationCheckBox
+            // 
+            this.DxDirectDrawEmulationCheckBox.Location = new System.Drawing.Point(31, 346);
+            this.DxDirectDrawEmulationCheckBox.Name = "DxDirectDrawEmulationCheckBox";
+            this.DxDirectDrawEmulationCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DxDirectDrawEmulationCheckBox.Size = new System.Drawing.Size(147, 17);
+            this.DxDirectDrawEmulationCheckBox.TabIndex = 27;
+            this.DxDirectDrawEmulationCheckBox.Text = "DirectDraw Emulation";
+            this.DxDirectDrawEmulationCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DxDirectDrawEmulationCheckBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.DxDirectDrawEmulationCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // DxWndEmulationLabel
+            // 
+            this.DxWndEmulationLabel.AutoSize = true;
+            this.DxWndEmulationLabel.Location = new System.Drawing.Point(33, 369);
+            this.DxWndEmulationLabel.Name = "DxWndEmulationLabel";
+            this.DxWndEmulationLabel.Size = new System.Drawing.Size(53, 13);
+            this.DxWndEmulationLabel.TabIndex = 28;
+            this.DxWndEmulationLabel.Text = "Emulation";
+            // 
+            // DxEmulationComboBox
+            // 
+            this.DxEmulationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DxEmulationComboBox.FormattingEnabled = true;
+            this.DxEmulationComboBox.Items.AddRange(new object[] {
+            "No Emulation",
+            "Primary Buffer",
+            "Locked Surface",
+            "Primary Surface",
+            "Hybrid Mode",
+            "GDI Mode"});
+            this.DxEmulationComboBox.Location = new System.Drawing.Point(164, 365);
+            this.DxEmulationComboBox.Name = "DxEmulationComboBox";
+            this.DxEmulationComboBox.Size = new System.Drawing.Size(119, 21);
+            this.DxEmulationComboBox.TabIndex = 29;
+            // 
             // SetupFrame
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(309, 433);
+            this.ClientSize = new System.Drawing.Size(309, 465);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.btnCancel);
@@ -864,6 +922,10 @@
         private System.Windows.Forms.CheckBox chkUseCustomColors;
         private System.Windows.Forms.Label lblUseCustomColors;
         private System.Windows.Forms.Label lblMP;
+        private System.Windows.Forms.CheckBox DirectDrawEmulationCheckBox;
+        private System.Windows.Forms.CheckBox DxDirectDrawEmulationCheckBox;
+        private System.Windows.Forms.Label DxWndEmulationLabel;
+        private System.Windows.Forms.ComboBox DxEmulationComboBox;
     }
 }
 

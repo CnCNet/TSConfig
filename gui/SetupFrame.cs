@@ -86,8 +86,11 @@ namespace gui
 
             GP_NoVideoMemoryCheckBox.Checked = DomainController.Instance().getNoVideoMemory();
             GP_FakeVsyncCheckBox.Checked = DomainController.Instance().getFakeVsync();
+            DirectDrawEmulationCheckBox.Checked = DomainController.Instance().getDirectDrawEmulation();
             GP_DxWndWindowBordersCheckBox.Checked = DomainController.Instance().getDxWndWindowFrame();
             GP_DxWndWindowedCheckBox.Checked = DomainController.Instance().getDxWndWindow();
+            DxDirectDrawEmulationCheckBox.Checked = DomainController.Instance().getDxDirectDrawEmulation();
+            DxEmulationComboBox.SelectedIndex = DomainController.Instance().getDxEmulationType();
 
             if (GP_DxWndRadioButton.Checked)
                 GP_DxWndRadioButton.Checked = DomainController.Instance().getDxWndEnabled();
@@ -173,10 +176,13 @@ namespace gui
             bool _GP_ddwrapper = GP_ddwrapperRadioButton.Checked;
             bool _GP_NoVideoMemory = GP_NoVideoMemoryCheckBox.Checked;
             bool _GP_FakeVsync = GP_FakeVsyncCheckBox.Checked;
+            bool ddEmulation = DirectDrawEmulationCheckBox.Checked;
             bool _GP_DxWndEnabled = GP_DxWndRadioButton.Checked;
             bool _GP_dxwnd = GP_DxWndRadioButton.Checked;
             bool _GP_DxWndWindow = GP_DxWndWindowedCheckBox.Checked;
             bool _GP_DxWndWindowFrame = GP_DxWndWindowBordersCheckBox.Checked;
+            bool dxDDEmulation = DxDirectDrawEmulationCheckBox.Checked;
+            int dxEmulationType = DxEmulationComboBox.SelectedIndex;
 
             return DomainController.Instance().saveSettings(
                 width, 
@@ -196,11 +202,14 @@ namespace gui
                 _GP_ddwrapper,
                 _GP_NoVideoMemory, 
                 _GP_FakeVsync, 
+                ddEmulation,
+                dxEmulationType,
                 _GP_TSDDraw,
                 _GP_dxwnd,
                 _GP_DxWndEnabled,
                 _GP_DxWndWindow, 
                 _GP_DxWndWindowFrame, 
+                dxDDEmulation,
                 procAffinity, 
                 ColorOverrides, 
                 OverrideColors, 
@@ -260,7 +269,7 @@ namespace gui
 
         private void GP_ddwrapperRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            GP_NoVideoMemoryCheckBox.Enabled = (GP_FakeVsyncCheckBox.Enabled = GP_ddwrapperRadioButton.Checked);
+            DirectDrawEmulationCheckBox.Enabled = GP_NoVideoMemoryCheckBox.Enabled = GP_FakeVsyncCheckBox.Enabled = GP_ddwrapperRadioButton.Checked;
         }
 
         private void lblWindowed_Click(object sender, EventArgs e)
@@ -296,8 +305,8 @@ namespace gui
 
         private void GP_DxWndRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            GP_DxWndWindowedCheckBox.Enabled = (GP_DxWndWindowBordersCheckBox.Enabled = GP_DxWndRadioButton.Checked);
-
+            DxEmulationComboBox.Enabled = DxDirectDrawEmulationCheckBox.Enabled = GP_DxWndWindowedCheckBox.Enabled = GP_DxWndWindowBordersCheckBox.Enabled = GP_DxWndRadioButton.Checked;
+            
             chkWindowed.Enabled = !GP_DxWndRadioButton.Checked;
             if (GP_DxWndRadioButton.Checked)
                 chkWindowed.Checked = false;
