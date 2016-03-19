@@ -34,6 +34,10 @@
             this.btnApply = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.videoPage = new System.Windows.Forms.TabPage();
+            this.DxEmulationComboBox = new System.Windows.Forms.ComboBox();
+            this.DxWndEmulationLabel = new System.Windows.Forms.Label();
+            this.DxDirectDrawEmulationCheckBox = new System.Windows.Forms.CheckBox();
+            this.DirectDrawEmulationCheckBox = new System.Windows.Forms.CheckBox();
             this.GP_DxWndWindowBordersCheckBox = new System.Windows.Forms.CheckBox();
             this.GP_DxWndWindowBordersLabel = new System.Windows.Forms.Label();
             this.GP_DxWndWindowedCheckBox = new System.Windows.Forms.CheckBox();
@@ -93,10 +97,6 @@
             this.chkUseCustomColors = new System.Windows.Forms.CheckBox();
             this.lblUseCustomColors = new System.Windows.Forms.Label();
             this.lblMP = new System.Windows.Forms.Label();
-            this.DirectDrawEmulationCheckBox = new System.Windows.Forms.CheckBox();
-            this.DxDirectDrawEmulationCheckBox = new System.Windows.Forms.CheckBox();
-            this.DxWndEmulationLabel = new System.Windows.Forms.Label();
-            this.DxEmulationComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl.SuspendLayout();
             this.videoPage.SuspendLayout();
             this.gameOptionsPage.SuspendLayout();
@@ -192,6 +192,58 @@
             this.videoPage.TabIndex = 0;
             this.videoPage.Text = "Video";
             this.videoPage.UseVisualStyleBackColor = true;
+            // 
+            // DxEmulationComboBox
+            // 
+            this.DxEmulationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DxEmulationComboBox.Enabled = false;
+            this.DxEmulationComboBox.FormattingEnabled = true;
+            this.DxEmulationComboBox.Items.AddRange(new object[] {
+            "No Emulation",
+            "Primary Buffer",
+            "Locked Surface",
+            "Primary Surface",
+            "Hybrid Mode",
+            "GDI Mode"});
+            this.DxEmulationComboBox.Location = new System.Drawing.Point(164, 365);
+            this.DxEmulationComboBox.Name = "DxEmulationComboBox";
+            this.DxEmulationComboBox.Size = new System.Drawing.Size(119, 21);
+            this.DxEmulationComboBox.TabIndex = 29;
+            // 
+            // DxWndEmulationLabel
+            // 
+            this.DxWndEmulationLabel.AutoSize = true;
+            this.DxWndEmulationLabel.Location = new System.Drawing.Point(33, 369);
+            this.DxWndEmulationLabel.Name = "DxWndEmulationLabel";
+            this.DxWndEmulationLabel.Size = new System.Drawing.Size(53, 13);
+            this.DxWndEmulationLabel.TabIndex = 28;
+            this.DxWndEmulationLabel.Text = "Emulation";
+            // 
+            // DxDirectDrawEmulationCheckBox
+            // 
+            this.DxDirectDrawEmulationCheckBox.Enabled = false;
+            this.DxDirectDrawEmulationCheckBox.Location = new System.Drawing.Point(31, 346);
+            this.DxDirectDrawEmulationCheckBox.Name = "DxDirectDrawEmulationCheckBox";
+            this.DxDirectDrawEmulationCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DxDirectDrawEmulationCheckBox.Size = new System.Drawing.Size(147, 17);
+            this.DxDirectDrawEmulationCheckBox.TabIndex = 27;
+            this.DxDirectDrawEmulationCheckBox.Text = "DirectDraw Emulation";
+            this.DxDirectDrawEmulationCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DxDirectDrawEmulationCheckBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.DxDirectDrawEmulationCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // DirectDrawEmulationCheckBox
+            // 
+            this.DirectDrawEmulationCheckBox.Enabled = false;
+            this.DirectDrawEmulationCheckBox.Location = new System.Drawing.Point(31, 253);
+            this.DirectDrawEmulationCheckBox.Name = "DirectDrawEmulationCheckBox";
+            this.DirectDrawEmulationCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DirectDrawEmulationCheckBox.Size = new System.Drawing.Size(147, 17);
+            this.DirectDrawEmulationCheckBox.TabIndex = 26;
+            this.DirectDrawEmulationCheckBox.Text = "DirectDraw Emulation";
+            this.DirectDrawEmulationCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DirectDrawEmulationCheckBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.DirectDrawEmulationCheckBox.UseVisualStyleBackColor = true;
             // 
             // GP_DxWndWindowBordersCheckBox
             // 
@@ -772,55 +824,6 @@
             this.lblMP.Size = new System.Drawing.Size(57, 13);
             this.lblMP.TabIndex = 0;
             this.lblMP.Text = "Multiplayer";
-            // 
-            // DirectDrawEmulationCheckBox
-            // 
-            this.DirectDrawEmulationCheckBox.Location = new System.Drawing.Point(31, 253);
-            this.DirectDrawEmulationCheckBox.Name = "DirectDrawEmulationCheckBox";
-            this.DirectDrawEmulationCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DirectDrawEmulationCheckBox.Size = new System.Drawing.Size(147, 17);
-            this.DirectDrawEmulationCheckBox.TabIndex = 26;
-            this.DirectDrawEmulationCheckBox.Text = "DirectDraw Emulation";
-            this.DirectDrawEmulationCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DirectDrawEmulationCheckBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.DirectDrawEmulationCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // DxDirectDrawEmulationCheckBox
-            // 
-            this.DxDirectDrawEmulationCheckBox.Location = new System.Drawing.Point(31, 346);
-            this.DxDirectDrawEmulationCheckBox.Name = "DxDirectDrawEmulationCheckBox";
-            this.DxDirectDrawEmulationCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DxDirectDrawEmulationCheckBox.Size = new System.Drawing.Size(147, 17);
-            this.DxDirectDrawEmulationCheckBox.TabIndex = 27;
-            this.DxDirectDrawEmulationCheckBox.Text = "DirectDraw Emulation";
-            this.DxDirectDrawEmulationCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DxDirectDrawEmulationCheckBox.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.DxDirectDrawEmulationCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // DxWndEmulationLabel
-            // 
-            this.DxWndEmulationLabel.AutoSize = true;
-            this.DxWndEmulationLabel.Location = new System.Drawing.Point(33, 369);
-            this.DxWndEmulationLabel.Name = "DxWndEmulationLabel";
-            this.DxWndEmulationLabel.Size = new System.Drawing.Size(53, 13);
-            this.DxWndEmulationLabel.TabIndex = 28;
-            this.DxWndEmulationLabel.Text = "Emulation";
-            // 
-            // DxEmulationComboBox
-            // 
-            this.DxEmulationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DxEmulationComboBox.FormattingEnabled = true;
-            this.DxEmulationComboBox.Items.AddRange(new object[] {
-            "No Emulation",
-            "Primary Buffer",
-            "Locked Surface",
-            "Primary Surface",
-            "Hybrid Mode",
-            "GDI Mode"});
-            this.DxEmulationComboBox.Location = new System.Drawing.Point(164, 365);
-            this.DxEmulationComboBox.Name = "DxEmulationComboBox";
-            this.DxEmulationComboBox.Size = new System.Drawing.Size(119, 21);
-            this.DxEmulationComboBox.TabIndex = 29;
             // 
             // SetupFrame
             // 
