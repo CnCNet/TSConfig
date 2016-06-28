@@ -56,6 +56,7 @@ namespace gui
                 trbScoreVolume.Value = Convert.ToInt32(DomainController.Instance().getScoreVolume() * 20);
                 trbVoiceVolume.Value = Convert.ToInt32(DomainController.Instance().getVoiceVolume() * 20);
                 trbSoundVolume.Value = Convert.ToInt32(DomainController.Instance().getSoundVolume() * 20);
+                trbDragDistance.Value = DomainController.Instance().getDragDistance();
             }
             catch
             {
@@ -63,6 +64,10 @@ namespace gui
             chkUseCustomColors.Checked = DomainController.Instance().getOverrideColors();
             ColorOverrides = DomainController.Instance().getColorOverrides();
             TextBackgroundColor = DomainController.Instance().getTextBackgroundColor();
+            chkUseOnlyRightClickDeselect.Checked = DomainController.Instance().getOnlyRightClickDeselect();
+            chkUseDisableAltTab.Checked = DomainController.Instance().getDisableAltTab();
+            chkUseDisableEdgeScrolling.Checked = DomainController.Instance().getDisableEdgeScrolling();
+            chkUseIntegrateMumble.Checked = DomainController.Instance().getIntegrateMumble();
 
             GP_ddwrapperRadioButton.Checked = DomainController.Instance().getDDwrapperStatus();
 
@@ -169,7 +174,12 @@ namespace gui
             Double musicVolume = Convert.ToDouble(trbScoreVolume.Value) / 20.0;
             Double voiceVolume = Convert.ToDouble(trbVoiceVolume.Value) / 20.0;
             Double soundVolume = Convert.ToDouble(trbSoundVolume.Value) / 20.0;
+            int dragDistance = trbDragDistance.Value;
             Boolean OverrideColors = chkUseCustomColors.Checked;
+            Boolean OnlyRightClickDeselect = chkUseOnlyRightClickDeselect.Checked;
+            Boolean DisableAltTab = chkUseDisableAltTab.Checked;
+            Boolean DisableEdgeScrolling = chkUseDisableEdgeScrolling.Checked;
+            Boolean IntegrateMumble = chkUseIntegrateMumble.Checked;
 
             bool _GP_TSDDraw = GP_TSDDrawRadioButton.Checked;
             bool _GP_IEddraw = GP_IEddrawRadioButton.Checked;
@@ -185,34 +195,39 @@ namespace gui
             int dxEmulationType = DxEmulationComboBox.SelectedIndex;
 
             return DomainController.Instance().saveSettings(
-                width, 
-                height, 
-                unitActionLines, 
-                tooltips, 
-                videoWindowed, 
-                Backbuffer, 
-                Intro, 
-                CD, 
-                musicRepeat, 
-                musicShuffle, 
-                musicVolume, 
-                voiceVolume, 
-                soundVolume, 
+                width,
+                height,
+                unitActionLines,
+                tooltips,
+                videoWindowed,
+                Backbuffer,
+                Intro,
+                CD,
+                musicRepeat,
+                musicShuffle,
+                musicVolume,
+                voiceVolume,
+                soundVolume,
+                dragDistance,
                 _GP_IEddraw,
                 _GP_ddwrapper,
-                _GP_NoVideoMemory, 
-                _GP_FakeVsync, 
+                _GP_NoVideoMemory,
+                _GP_FakeVsync,
                 ddEmulation,
                 dxEmulationType,
                 _GP_TSDDraw,
                 _GP_dxwnd,
                 _GP_DxWndEnabled,
-                _GP_DxWndWindow, 
-                _GP_DxWndWindowFrame, 
+                _GP_DxWndWindow,
+                _GP_DxWndWindowFrame,
                 dxDDEmulation,
-                procAffinity, 
-                ColorOverrides, 
-                OverrideColors, 
+                procAffinity,
+                ColorOverrides,
+                OverrideColors,
+                OnlyRightClickDeselect,
+                DisableAltTab,
+                DisableEdgeScrolling,
+                IntegrateMumble,
                 TextBackgroundColor);
         }
 
@@ -255,6 +270,11 @@ namespace gui
         private void trbScoreVolume_ValueChanged(object sender, EventArgs e)
         {
             lblScoreVolumeValue.Text = trbScoreVolume.Value * 5 + "%";
+        }
+
+        private void trbDragDistance_ValueChanged(object sender, EventArgs e)
+        {
+            lblDragDistanceValue.Text = String.Format("{0}", trbDragDistance.Value);
         }
 
         private void trbVoiceVolume_ValueChanged(object sender, EventArgs e)
