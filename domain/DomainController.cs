@@ -117,10 +117,15 @@ namespace tsconfig.domain
         {
             return SUN_ini.getBoolValue("Intro", "PlaySide00", true);
         }
-        
+
         public double getScoreVolume()
         {
             return SUN_ini.getFloatValue("Audio", "ScoreVolume", 0.3);
+        }
+
+        public int getDragDistance()
+        {
+            return SUN_ini.getIntValue("Options", "DragDistance", 4);
         }
 
         public double getVoiceVolume()
@@ -143,6 +148,26 @@ namespace tsconfig.domain
         public Boolean getOverrideColors()
         {
             return SUN_ini.getBoolValue("Options", "OverrideColors", false);
+        }
+
+        public Boolean getOnlyRightClickDeselect()
+        {
+            return SUN_ini.getBoolValue("Options", "OnlyRightClickDeselect", false);
+        }
+
+        public Boolean getDisableAltTab()
+        {
+            return SUN_ini.getBoolValue("Options", "DisableAltTab", false);
+        }
+
+        public Boolean getDisableEdgeScrolling()
+        {
+            return SUN_ini.getBoolValue("Options", "DisableEdgeScrolling", false);
+        }
+
+        public Boolean getIntegrateMumble()
+        {
+            return SUN_ini.getBoolValue("Options", "IntegrateMumble", false);
         }
 
         public int getTextBackgroundColor()
@@ -287,6 +312,7 @@ namespace tsconfig.domain
             Double musicVolume, 
             Double voiceVolume,
             Double soundVolume, 
+            int DragDistance,
             bool _GP_IEddraw, 
             bool _GP_ddwrapper, 
             bool _GP_NoVideoMemory, 
@@ -301,7 +327,11 @@ namespace tsconfig.domain
             bool dxDDEmulation,
             bool procAffinity, 
             WWColor[] ColorOverrides, 
-            Boolean OverrideColors, 
+            Boolean OverrideColors,
+            Boolean OnlyRightClickDeselect,
+            Boolean DisableAltTab,
+            Boolean DisableEdgeScrolling,
+            Boolean IntegrateMumble,
             int TextBackgroundColor
             )
         {
@@ -323,6 +353,7 @@ namespace tsconfig.domain
             SUN_ini.setFloatValue("Audio", "ScoreVolume", musicVolume, 6);
             SUN_ini.setFloatValue("Audio", "VoiceVolume", voiceVolume, 6);
             SUN_ini.setFloatValue("Audio", "SoundVolume", soundVolume, 6);
+            SUN_ini.setIntValue("Options", "DragDistance", DragDistance, false);
             /* mpHandle = setDefaultName(mpHandle);
             SUN_ini.setStringValue("MultiPlayer","Handle", mpHandle); */
 
@@ -337,6 +368,10 @@ namespace tsconfig.domain
 
             SUN_ini.setIntValue("Options","TextBackgroundColor", TextBackgroundColor);
             SUN_ini.setBoolValue("Options","OverrideColors", OverrideColors);
+            SUN_ini.setBoolValue("Options", "OnlyRightClickDeselect", OnlyRightClickDeselect);
+            SUN_ini.setBoolValue("Options", "DisableAltTab", DisableAltTab);
+            SUN_ini.setBoolValue("Options", "DisableEdgeScrolling", DisableEdgeScrolling);
+            SUN_ini.setBoolValue("Options", "IntegrateMumble", IntegrateMumble);
 
             if (!File.Exists(ProgramConstants.gamepath + ProgramConstants.GAME_SETTINGS))
                 GameFileManagement.WriteSunIni();

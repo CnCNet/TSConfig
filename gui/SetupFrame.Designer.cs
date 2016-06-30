@@ -65,6 +65,19 @@
             this.lblResolution = new System.Windows.Forms.Label();
             this.cmbResolution = new System.Windows.Forms.ComboBox();
             this.gameOptionsPage = new System.Windows.Forms.TabPage();
+            this.chkUseDisableEdgeScrolling = new System.Windows.Forms.CheckBox();
+            this.lblUseDisableEdgeScrolling = new System.Windows.Forms.Label();
+            this.chkUseDisableAltTab = new System.Windows.Forms.CheckBox();
+            this.lblUseDisableAltTab = new System.Windows.Forms.Label();
+            this.lblDragDistanceValue = new System.Windows.Forms.Label();
+            this.trbDragDistance = new System.Windows.Forms.TrackBar();
+            this.btnColorSchemeEditor = new System.Windows.Forms.Button();
+            this.lblDisable = new System.Windows.Forms.Label();
+            this.chkUseOnlyRightClickDeselect = new System.Windows.Forms.CheckBox();
+            this.lblUseOnlyRightClickDeselect = new System.Windows.Forms.Label();
+            this.chkUseCustomColors = new System.Windows.Forms.CheckBox();
+            this.lblUseCustomColors = new System.Windows.Forms.Label();
+            this.lblUseDragDistance = new System.Windows.Forms.Label();
             this.lblGameOptions = new System.Windows.Forms.Label();
             this.chkProcAffinity = new System.Windows.Forms.CheckBox();
             this.lblProcAffinity = new System.Windows.Forms.Label();
@@ -93,13 +106,13 @@
             this.chkRepeat = new System.Windows.Forms.CheckBox();
             this.lblRepeat = new System.Windows.Forms.Label();
             this.mpPage = new System.Windows.Forms.TabPage();
-            this.btnColorSchemeEditor = new System.Windows.Forms.Button();
-            this.chkUseCustomColors = new System.Windows.Forms.CheckBox();
-            this.lblUseCustomColors = new System.Windows.Forms.Label();
+            this.chkUseIntegrateMumble = new System.Windows.Forms.CheckBox();
+            this.lblUseIntegrateMumble = new System.Windows.Forms.Label();
             this.lblMP = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.videoPage.SuspendLayout();
             this.gameOptionsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trbDragDistance)).BeginInit();
             this.soundPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trbSoundVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbVoiceVolume)).BeginInit();
@@ -489,6 +502,19 @@
             // 
             // gameOptionsPage
             // 
+            this.gameOptionsPage.Controls.Add(this.chkUseDisableEdgeScrolling);
+            this.gameOptionsPage.Controls.Add(this.lblUseDisableEdgeScrolling);
+            this.gameOptionsPage.Controls.Add(this.chkUseDisableAltTab);
+            this.gameOptionsPage.Controls.Add(this.lblUseDisableAltTab);
+            this.gameOptionsPage.Controls.Add(this.lblDragDistanceValue);
+            this.gameOptionsPage.Controls.Add(this.trbDragDistance);
+            this.gameOptionsPage.Controls.Add(this.btnColorSchemeEditor);
+            this.gameOptionsPage.Controls.Add(this.lblDisable);
+            this.gameOptionsPage.Controls.Add(this.chkUseOnlyRightClickDeselect);
+            this.gameOptionsPage.Controls.Add(this.lblUseOnlyRightClickDeselect);
+            this.gameOptionsPage.Controls.Add(this.chkUseCustomColors);
+            this.gameOptionsPage.Controls.Add(this.lblUseCustomColors);
+            this.gameOptionsPage.Controls.Add(this.lblUseDragDistance);
             this.gameOptionsPage.Controls.Add(this.lblGameOptions);
             this.gameOptionsPage.Controls.Add(this.chkProcAffinity);
             this.gameOptionsPage.Controls.Add(this.lblProcAffinity);
@@ -508,6 +534,119 @@
             this.gameOptionsPage.Text = "Game Options";
             this.gameOptionsPage.UseVisualStyleBackColor = true;
             // 
+            // chkUseDisableEdgeScrolling
+            // 
+            this.chkUseDisableEdgeScrolling.Location = new System.Drawing.Point(158, 233);
+            this.chkUseDisableEdgeScrolling.Name = "chkUseDisableEdgeScrolling";
+            this.chkUseDisableEdgeScrolling.Size = new System.Drawing.Size(29, 17);
+            this.chkUseDisableEdgeScrolling.TabIndex = 80;
+            this.chkUseDisableEdgeScrolling.Text = " ";
+            this.chkUseDisableEdgeScrolling.UseVisualStyleBackColor = true;
+            // 
+            // lblUseDisableEdgeScrolling
+            // 
+            this.lblUseDisableEdgeScrolling.Location = new System.Drawing.Point(16, 233);
+            this.lblUseDisableEdgeScrolling.Name = "lblUseDisableEdgeScrolling";
+            this.lblUseDisableEdgeScrolling.Size = new System.Drawing.Size(145, 14);
+            this.lblUseDisableEdgeScrolling.TabIndex = 81;
+            this.lblUseDisableEdgeScrolling.Text = "Disable Edge Scrolling:";
+            // 
+            // chkUseDisableAltTab
+            // 
+            this.chkUseDisableAltTab.Location = new System.Drawing.Point(158, 207);
+            this.chkUseDisableAltTab.Name = "chkUseDisableAltTab";
+            this.chkUseDisableAltTab.Size = new System.Drawing.Size(29, 17);
+            this.chkUseDisableAltTab.TabIndex = 74;
+            this.chkUseDisableAltTab.Text = " ";
+            this.chkUseDisableAltTab.UseVisualStyleBackColor = true;
+            // 
+            // lblUseDisableAltTab
+            // 
+            this.lblUseDisableAltTab.Location = new System.Drawing.Point(16, 208);
+            this.lblUseDisableAltTab.Name = "lblUseDisableAltTab";
+            this.lblUseDisableAltTab.Size = new System.Drawing.Size(145, 14);
+            this.lblUseDisableAltTab.TabIndex = 79;
+            this.lblUseDisableAltTab.Text = "Alt+Tab, WinKey, Ctrl+Esc.";
+            // 
+            // lblDragDistanceValue
+            // 
+            this.lblDragDistanceValue.AutoSize = true;
+            this.lblDragDistanceValue.Location = new System.Drawing.Point(263, 149);
+            this.lblDragDistanceValue.Name = "lblDragDistanceValue";
+            this.lblDragDistanceValue.Size = new System.Drawing.Size(13, 13);
+            this.lblDragDistanceValue.TabIndex = 78;
+            this.lblDragDistanceValue.Text = "4";
+            // 
+            // trbDragDistance
+            // 
+            this.trbDragDistance.AutoSize = false;
+            this.trbDragDistance.Location = new System.Drawing.Point(136, 144);
+            this.trbDragDistance.Maximum = 32;
+            this.trbDragDistance.Name = "trbDragDistance";
+            this.trbDragDistance.Size = new System.Drawing.Size(121, 27);
+            this.trbDragDistance.TabIndex = 77;
+            this.trbDragDistance.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trbDragDistance.Value = 4;
+            this.trbDragDistance.ValueChanged += new System.EventHandler(this.trbDragDistance_ValueChanged);
+            // 
+            // btnColorSchemeEditor
+            // 
+            this.btnColorSchemeEditor.Location = new System.Drawing.Point(181, 119);
+            this.btnColorSchemeEditor.Name = "btnColorSchemeEditor";
+            this.btnColorSchemeEditor.Size = new System.Drawing.Size(76, 22);
+            this.btnColorSchemeEditor.TabIndex = 76;
+            this.btnColorSchemeEditor.Text = "Edit Colors";
+            // 
+            // lblDisable
+            // 
+            this.lblDisable.Location = new System.Drawing.Point(16, 194);
+            this.lblDisable.Name = "lblDisable";
+            this.lblDisable.Size = new System.Drawing.Size(145, 14);
+            this.lblDisable.TabIndex = 75;
+            this.lblDisable.Text = "Disable:";
+            // 
+            // chkUseOnlyRightClickDeselect
+            // 
+            this.chkUseOnlyRightClickDeselect.Location = new System.Drawing.Point(158, 171);
+            this.chkUseOnlyRightClickDeselect.Name = "chkUseOnlyRightClickDeselect";
+            this.chkUseOnlyRightClickDeselect.Size = new System.Drawing.Size(29, 17);
+            this.chkUseOnlyRightClickDeselect.TabIndex = 72;
+            this.chkUseOnlyRightClickDeselect.Text = " ";
+            this.chkUseOnlyRightClickDeselect.UseVisualStyleBackColor = true;
+            // 
+            // lblUseOnlyRightClickDeselect
+            // 
+            this.lblUseOnlyRightClickDeselect.Location = new System.Drawing.Point(16, 174);
+            this.lblUseOnlyRightClickDeselect.Name = "lblUseOnlyRightClickDeselect";
+            this.lblUseOnlyRightClickDeselect.Size = new System.Drawing.Size(145, 14);
+            this.lblUseOnlyRightClickDeselect.TabIndex = 73;
+            this.lblUseOnlyRightClickDeselect.Text = "Force Right-Click De-Select:";
+            // 
+            // chkUseCustomColors
+            // 
+            this.chkUseCustomColors.Location = new System.Drawing.Point(158, 124);
+            this.chkUseCustomColors.Name = "chkUseCustomColors";
+            this.chkUseCustomColors.Size = new System.Drawing.Size(29, 17);
+            this.chkUseCustomColors.TabIndex = 69;
+            this.chkUseCustomColors.Text = " ";
+            this.chkUseCustomColors.UseVisualStyleBackColor = true;
+            // 
+            // lblUseCustomColors
+            // 
+            this.lblUseCustomColors.Location = new System.Drawing.Point(16, 125);
+            this.lblUseCustomColors.Name = "lblUseCustomColors";
+            this.lblUseCustomColors.Size = new System.Drawing.Size(145, 14);
+            this.lblUseCustomColors.TabIndex = 71;
+            this.lblUseCustomColors.Text = "Use Custom Colors:";
+            // 
+            // lblUseDragDistance
+            // 
+            this.lblUseDragDistance.Location = new System.Drawing.Point(16, 146);
+            this.lblUseDragDistance.Name = "lblUseDragDistance";
+            this.lblUseDragDistance.Size = new System.Drawing.Size(145, 14);
+            this.lblUseDragDistance.TabIndex = 68;
+            this.lblUseDragDistance.Text = "Drag Distance:";
+            // 
             // lblGameOptions
             // 
             this.lblGameOptions.AutoSize = true;
@@ -520,7 +659,7 @@
             // chkProcAffinity
             // 
             this.chkProcAffinity.AutoSize = true;
-            this.chkProcAffinity.Location = new System.Drawing.Point(146, 105);
+            this.chkProcAffinity.Location = new System.Drawing.Point(158, 105);
             this.chkProcAffinity.Name = "chkProcAffinity";
             this.chkProcAffinity.Size = new System.Drawing.Size(29, 17);
             this.chkProcAffinity.TabIndex = 4;
@@ -538,7 +677,7 @@
             // chkCD
             // 
             this.chkCD.AutoSize = true;
-            this.chkCD.Location = new System.Drawing.Point(146, 85);
+            this.chkCD.Location = new System.Drawing.Point(158, 85);
             this.chkCD.Name = "chkCD";
             this.chkCD.Size = new System.Drawing.Size(29, 17);
             this.chkCD.TabIndex = 3;
@@ -556,7 +695,7 @@
             // chkIntro
             // 
             this.chkIntro.AutoSize = true;
-            this.chkIntro.Location = new System.Drawing.Point(146, 65);
+            this.chkIntro.Location = new System.Drawing.Point(158, 65);
             this.chkIntro.Name = "chkIntro";
             this.chkIntro.Size = new System.Drawing.Size(29, 17);
             this.chkIntro.TabIndex = 2;
@@ -574,7 +713,7 @@
             // chkToolTips
             // 
             this.chkToolTips.AutoSize = true;
-            this.chkToolTips.Location = new System.Drawing.Point(146, 45);
+            this.chkToolTips.Location = new System.Drawing.Point(158, 45);
             this.chkToolTips.Name = "chkToolTips";
             this.chkToolTips.Size = new System.Drawing.Size(29, 17);
             this.chkToolTips.TabIndex = 1;
@@ -592,7 +731,7 @@
             // chkUnitActionLines
             // 
             this.chkUnitActionLines.AutoSize = true;
-            this.chkUnitActionLines.Location = new System.Drawing.Point(146, 25);
+            this.chkUnitActionLines.Location = new System.Drawing.Point(158, 24);
             this.chkUnitActionLines.Name = "chkUnitActionLines";
             this.chkUnitActionLines.Size = new System.Drawing.Size(29, 17);
             this.chkUnitActionLines.TabIndex = 0;
@@ -777,9 +916,8 @@
             // 
             // mpPage
             // 
-            this.mpPage.Controls.Add(this.btnColorSchemeEditor);
-            this.mpPage.Controls.Add(this.chkUseCustomColors);
-            this.mpPage.Controls.Add(this.lblUseCustomColors);
+            this.mpPage.Controls.Add(this.chkUseIntegrateMumble);
+            this.mpPage.Controls.Add(this.lblUseIntegrateMumble);
             this.mpPage.Controls.Add(this.lblMP);
             this.mpPage.Location = new System.Drawing.Point(4, 22);
             this.mpPage.Name = "mpPage";
@@ -789,32 +927,22 @@
             this.mpPage.Text = "Multiplayer";
             this.mpPage.UseVisualStyleBackColor = true;
             // 
-            // btnColorSchemeEditor
+            // chkUseIntegrateMumble
             // 
-            this.btnColorSchemeEditor.Location = new System.Drawing.Point(167, 22);
-            this.btnColorSchemeEditor.Name = "btnColorSchemeEditor";
-            this.btnColorSchemeEditor.Size = new System.Drawing.Size(76, 22);
-            this.btnColorSchemeEditor.TabIndex = 9;
-            this.btnColorSchemeEditor.Text = "Edit Colors";
-            this.btnColorSchemeEditor.Click += new System.EventHandler(this.btnColorSchemeEditor_Click);
+            this.chkUseIntegrateMumble.Location = new System.Drawing.Point(146, 24);
+            this.chkUseIntegrateMumble.Name = "chkUseIntegrateMumble";
+            this.chkUseIntegrateMumble.Size = new System.Drawing.Size(29, 17);
+            this.chkUseIntegrateMumble.TabIndex = 11;
+            this.chkUseIntegrateMumble.Text = " ";
+            this.chkUseIntegrateMumble.UseVisualStyleBackColor = true;
             // 
-            // chkUseCustomColors
+            // lblUseIntegrateMumble
             // 
-            this.chkUseCustomColors.Location = new System.Drawing.Point(146, 27);
-            this.chkUseCustomColors.Name = "chkUseCustomColors";
-            this.chkUseCustomColors.Size = new System.Drawing.Size(29, 17);
-            this.chkUseCustomColors.TabIndex = 8;
-            this.chkUseCustomColors.Text = " ";
-            this.chkUseCustomColors.UseVisualStyleBackColor = true;
-            // 
-            // lblUseCustomColors
-            // 
-            this.lblUseCustomColors.Location = new System.Drawing.Point(16, 29);
-            this.lblUseCustomColors.Name = "lblUseCustomColors";
-            this.lblUseCustomColors.Size = new System.Drawing.Size(145, 14);
-            this.lblUseCustomColors.TabIndex = 10;
-            this.lblUseCustomColors.Text = "Use Custom Colors:";
-            this.lblUseCustomColors.Click += new System.EventHandler(this.lblUseCustomColors_Click);
+            this.lblUseIntegrateMumble.Location = new System.Drawing.Point(16, 26);
+            this.lblUseIntegrateMumble.Name = "lblUseIntegrateMumble";
+            this.lblUseIntegrateMumble.Size = new System.Drawing.Size(145, 14);
+            this.lblUseIntegrateMumble.TabIndex = 12;
+            this.lblUseIntegrateMumble.Text = "Allow Mumble Integration:";
             // 
             // lblMP
             // 
@@ -848,6 +976,7 @@
             this.videoPage.PerformLayout();
             this.gameOptionsPage.ResumeLayout(false);
             this.gameOptionsPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trbDragDistance)).EndInit();
             this.soundPage.ResumeLayout(false);
             this.soundPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trbSoundVolume)).EndInit();
@@ -921,14 +1050,26 @@
         private System.Windows.Forms.RadioButton GP_DxWndRadioButton;
         private System.Windows.Forms.Label GP_DxWndLabel;
         private System.Windows.Forms.TabPage mpPage;
-        private System.Windows.Forms.Button btnColorSchemeEditor;
-        private System.Windows.Forms.CheckBox chkUseCustomColors;
-        private System.Windows.Forms.Label lblUseCustomColors;
         private System.Windows.Forms.Label lblMP;
         private System.Windows.Forms.CheckBox DirectDrawEmulationCheckBox;
         private System.Windows.Forms.CheckBox DxDirectDrawEmulationCheckBox;
         private System.Windows.Forms.Label DxWndEmulationLabel;
         private System.Windows.Forms.ComboBox DxEmulationComboBox;
+        private System.Windows.Forms.CheckBox chkUseIntegrateMumble;
+        private System.Windows.Forms.Label lblUseIntegrateMumble;
+        private System.Windows.Forms.Button btnColorSchemeEditor;
+        private System.Windows.Forms.CheckBox chkUseDisableAltTab;
+        private System.Windows.Forms.Label lblDisable;
+        private System.Windows.Forms.CheckBox chkUseOnlyRightClickDeselect;
+        private System.Windows.Forms.Label lblUseOnlyRightClickDeselect;
+        private System.Windows.Forms.CheckBox chkUseCustomColors;
+        private System.Windows.Forms.Label lblUseCustomColors;
+        private System.Windows.Forms.Label lblUseDragDistance;
+        private System.Windows.Forms.Label lblUseDisableAltTab;
+        private System.Windows.Forms.Label lblDragDistanceValue;
+        private System.Windows.Forms.TrackBar trbDragDistance;
+        private System.Windows.Forms.CheckBox chkUseDisableEdgeScrolling;
+        private System.Windows.Forms.Label lblUseDisableEdgeScrolling;
     }
 }
 
