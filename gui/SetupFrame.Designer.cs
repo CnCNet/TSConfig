@@ -596,6 +596,7 @@
             this.btnColorSchemeEditor.Size = new System.Drawing.Size(76, 22);
             this.btnColorSchemeEditor.TabIndex = 76;
             this.btnColorSchemeEditor.Text = "Edit Colors";
+            this.btnColorSchemeEditor.Click += new System.EventHandler(this.btnColorSchemeEditor_Click);
             // 
             // lblDisable
             // 
@@ -613,6 +614,7 @@
             this.chkUseOnlyRightClickDeselect.TabIndex = 72;
             this.chkUseOnlyRightClickDeselect.Text = " ";
             this.chkUseOnlyRightClickDeselect.UseVisualStyleBackColor = true;
+            this.chkUseOnlyRightClickDeselect.Visible = false;
             // 
             // lblUseOnlyRightClickDeselect
             // 
@@ -621,6 +623,7 @@
             this.lblUseOnlyRightClickDeselect.Size = new System.Drawing.Size(145, 14);
             this.lblUseOnlyRightClickDeselect.TabIndex = 73;
             this.lblUseOnlyRightClickDeselect.Text = "Force Right-Click De-Select:";
+            this.lblUseOnlyRightClickDeselect.Visible = false;
             // 
             // chkUseCustomColors
             // 
