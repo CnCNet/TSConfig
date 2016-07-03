@@ -596,6 +596,7 @@
             this.btnColorSchemeEditor.Size = new System.Drawing.Size(76, 22);
             this.btnColorSchemeEditor.TabIndex = 76;
             this.btnColorSchemeEditor.Text = "Edit Colors";
+            this.btnColorSchemeEditor.Click += new System.EventHandler(this.btnColorSchemeEditor_Click);
             // 
             // lblDisable
             // 
