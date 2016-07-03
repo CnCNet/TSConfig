@@ -613,6 +613,7 @@
             this.chkUseOnlyRightClickDeselect.TabIndex = 72;
             this.chkUseOnlyRightClickDeselect.Text = " ";
             this.chkUseOnlyRightClickDeselect.UseVisualStyleBackColor = true;
+            this.chkUseOnlyRightClickDeselect.Visible = false;
             // 
             // lblUseOnlyRightClickDeselect
             // 
@@ -621,6 +622,7 @@
             this.lblUseOnlyRightClickDeselect.Size = new System.Drawing.Size(145, 14);
             this.lblUseOnlyRightClickDeselect.TabIndex = 73;
             this.lblUseOnlyRightClickDeselect.Text = "Force Right-Click De-Select:";
+            this.lblUseOnlyRightClickDeselect.Visible = false;
             // 
             // chkUseCustomColors
             // 
