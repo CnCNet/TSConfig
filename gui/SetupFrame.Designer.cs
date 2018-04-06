@@ -473,6 +473,7 @@
             this.chkWindowed.TabIndex = 1;
             this.chkWindowed.Text = " ";
             this.chkWindowed.UseVisualStyleBackColor = true;
+            this.chkWindowed.CheckedChanged += new System.EventHandler(this.chkWindowed_CheckedChanged);
             // 
             // lblWindowed
             // 

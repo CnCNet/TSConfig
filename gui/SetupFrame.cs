@@ -91,7 +91,8 @@ namespace gui
 
             GP_NoVideoMemoryCheckBox.Checked = DomainController.Instance().getNoVideoMemory();
             GP_FakeVsyncCheckBox.Checked = DomainController.Instance().getFakeVsync();
-            DirectDrawEmulationCheckBox.Checked = DomainController.Instance().getDirectDrawEmulation();
+            if (!chkWindowed.Checked)
+                DirectDrawEmulationCheckBox.Checked = DomainController.Instance().getDirectDrawEmulation();
             GP_DxWndWindowBordersCheckBox.Checked = DomainController.Instance().getDxWndWindowFrame();
             GP_DxWndWindowedCheckBox.Checked = DomainController.Instance().getDxWndWindow();
             DxDirectDrawEmulationCheckBox.Checked = DomainController.Instance().getDxDirectDrawEmulation();
@@ -394,6 +395,12 @@ namespace gui
                 if (d.BkgColor.Checked)
                     TextBackgroundColor = 12;
             }
+        }
+
+        private void chkWindowed_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!(DirectDrawEmulationCheckBox.Enabled = !chkWindowed.Checked))
+                DirectDrawEmulationCheckBox.Checked = false; 
         }
     }
 }
