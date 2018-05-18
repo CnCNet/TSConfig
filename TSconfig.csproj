@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>tsconfig</RootNamespace>
-    <AssemblyName>tsconfig</AssemblyName>
+    <AssemblyName>tsconfigFull</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -80,8 +80,6 @@
   <ItemGroup>
     <Compile Include="domain\DomainController.cs" />
     <Compile Include="domain\ProgramConstants.cs" />
-    <Compile Include="domain\ScreenResolution.cs" />
-    <Compile Include="domain\ScreenResolutionOperations.cs" />
     <Compile Include="domain\Utilities.cs" />
     <Compile Include="domain\WWColor.cs" />
     <Compile Include="gui\SetupFrame.cs">
@@ -133,8 +131,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\aqrit.cfg" />
-    <None Include="Resources\dxwnd.ini" />
     <None Include="Resources\SUN.ini" />
     <None Include="Resources\tsconfig.xcf" />
     <None Include="TSconfig_1_TemporaryKey.pfx" />
@@ -168,15 +164,8 @@
     <None Include="bin\Debug\libwine.dll" />
     <None Include="bin\Debug\wined3d.dll" />
     <None Include="bin\Debug\ddwrapper.dll" />
-    <Content Include="Resources\ddraw.dll" />
-    <Content Include="Resources\ddwrapper.dll" />
-    <Content Include="Resources\dxwnd.dll" />
-    <Content Include="Resources\dxwnd_ddraw.dll" />
-    <Content Include="Resources\libwine.dll" />
     <Content Include="Resources\tsconfig.ico" />
     <Content Include="Resources\tsconfig.png" />
-    <Content Include="Resources\tsddraw.dll" />
-    <Content Include="Resources\wined3d.dll" />
     <Content Include="tsconfig.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -27,26 +27,10 @@ namespace gui
 
         private void loadSettings()
         {
-            List<String> resolutions;
-            String resolution = DomainController.Instance().getCurrentGameRes();
-            try
-            {
-                resolutions = screenres.ScreenResolutionOperations.getScreenResolutions(640, 400, 16);
-            }
-            catch (System.EntryPointNotFoundException)
-            {
-                MessageBox.Show("Unable to detect your monitor's display modes");
-                resolutions = new List<String>() {resolution};
-            }
-            cmbResolution.DataSource = resolutions;
-            if (resolutions.Contains(resolution))
-                cmbResolution.SelectedIndex = resolutions.IndexOf(resolution);
-
             chkUnitActionLines.Checked = DomainController.Instance().getUnitActionLines();
             chkToolTips.Checked = DomainController.Instance().getTooltips();
             chkRepeat.Checked = DomainController.Instance().getMusicRepeat();
             chkShuffle.Checked = DomainController.Instance().getMusicShuffle();
-            chkWindowed.Checked = DomainController.Instance().getWindowed();
             chkBackbuffer.Checked = DomainController.Instance().getBackbuffer();
             chkIntro.Checked = DomainController.Instance().getIntro();
             chkCD.Checked = DomainController.Instance().getCD();
@@ -67,52 +51,6 @@ namespace gui
             chkUseOnlyRightClickDeselect.Checked = DomainController.Instance().getOnlyRightClickDeselect();
             chkUseDisableAltTab.Checked = DomainController.Instance().getDisableAltTab();
             chkUseDisableEdgeScrolling.Checked = DomainController.Instance().getDisableEdgeScrolling();
-            chkUseIntegrateMumble.Checked = DomainController.Instance().getIntegrateMumble();
-
-            GP_ddwrapperRadioButton.Checked = DomainController.Instance().getDDwrapperStatus();
-
-            if (!GP_ddwrapperRadioButton.Checked && !GP_IEddrawRadioButton.Checked && !GP_DxWndRadioButton.Checked)
-                GP_TSDDrawRadioButton.Checked = DomainController.Instance().getTSDDrawStatus();
-
-            if (!GP_ddwrapperRadioButton.Checked && !GP_TSDDrawRadioButton.Checked && !GP_DxWndRadioButton.Checked)
-                chkWindowed.Enabled = true;
-                GP_IEddrawRadioButton.Checked = DomainController.Instance().getIEDDrawStatus();
-
-            if (!GP_ddwrapperRadioButton.Checked && !GP_TSDDrawRadioButton.Checked && !GP_IEddrawRadioButton.Checked)
-                GP_DxWndRadioButton.Checked = DomainController.Instance().getDxWndStatus();
-
-           /* if (chkWindowed.Checked && !GP_TSDDrawRadioButton.Checked)
-                MessageBox.Show("If TS-DDraw is not enabled then Windowed mode requires 16-bit color depth on your desktop", "Windowed mode info", MessageBoxButtons.OK, MessageBoxIcon.Information); */
-
-            GP_DisabledRadioButton.Checked = !GP_ddwrapperRadioButton.Checked && !GP_IEddrawRadioButton.Checked && !GP_TSDDrawRadioButton.Checked && !GP_DxWndRadioButton.Checked;
-
-            if (GP_DisabledRadioButton.Checked)
-                chkWindowed.Enabled = true;
-
-            GP_NoVideoMemoryCheckBox.Checked = DomainController.Instance().getNoVideoMemory();
-            GP_FakeVsyncCheckBox.Checked = DomainController.Instance().getFakeVsync();
-            if (!chkWindowed.Checked)
-                DirectDrawEmulationCheckBox.Checked = DomainController.Instance().getDirectDrawEmulation();
-            GP_DxWndWindowBordersCheckBox.Checked = DomainController.Instance().getDxWndWindowFrame();
-            GP_DxWndWindowedCheckBox.Checked = DomainController.Instance().getDxWndWindow();
-            DxDirectDrawEmulationCheckBox.Checked = DomainController.Instance().getDxDirectDrawEmulation();
-            DxEmulationComboBox.SelectedIndex = DomainController.Instance().getDxEmulationType();
-
-            if (GP_DxWndRadioButton.Checked)
-                GP_DxWndRadioButton.Checked = DomainController.Instance().getDxWndEnabled();
-
-            if (GP_DxWndRadioButton.Checked)
-            {
-                chkWindowed.Enabled = false;
-                chkWindowed.Checked = false;
-            }
-
-            if (GP_TSDDrawRadioButton.Checked)
-            {
-                chkWindowed.Enabled = false;
-                chkWindowed.Checked = false;
-            }
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -135,39 +73,10 @@ namespace gui
 
         private Boolean saveSettings()
         {
-            int width = 0;
-            int height = 0;
-
-            try
-            {
-                if (!cmbResolution.SelectedItem.ToString().Equals(String.Empty)
-                    && cmbResolution.SelectedItem.ToString().Contains("x"))
-                {
-                    String[] resolution = cmbResolution.SelectedItem.ToString().Split(new char[] { 'x' });
-                    if (resolution.Length == 2)
-                    {
-                        width = Convert.ToInt32(resolution[0]);
-                        height = Convert.ToInt32(resolution[1]);
-                    }
-                }
-            }
-            catch
-            {
-                width = 800;
-                height = 600;
-            }
-
-            if (width == 0 || height == 0)
-            {
-                MessageBox.Show("Error", "Error getting selected resolution!",
-                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
             Boolean unitActionLines = chkUnitActionLines.Checked;
             Boolean tooltips = chkToolTips.Checked;
             Boolean musicRepeat = chkRepeat.Checked;
             Boolean musicShuffle = chkShuffle.Checked;
-            Boolean videoWindowed = chkWindowed.Checked;
             Boolean Backbuffer = chkBackbuffer.Checked;
             Boolean CD = chkCD.Checked;
             Boolean procAffinity = chkProcAffinity.Checked;
@@ -180,27 +89,10 @@ namespace gui
             Boolean OnlyRightClickDeselect = chkUseOnlyRightClickDeselect.Checked;
             Boolean DisableAltTab = chkUseDisableAltTab.Checked;
             Boolean DisableEdgeScrolling = chkUseDisableEdgeScrolling.Checked;
-            Boolean IntegrateMumble = chkUseIntegrateMumble.Checked;
-
-            bool _GP_TSDDraw = GP_TSDDrawRadioButton.Checked;
-            bool _GP_IEddraw = GP_IEddrawRadioButton.Checked;
-            bool _GP_ddwrapper = GP_ddwrapperRadioButton.Checked;
-            bool _GP_NoVideoMemory = GP_NoVideoMemoryCheckBox.Checked;
-            bool _GP_FakeVsync = GP_FakeVsyncCheckBox.Checked;
-            bool ddEmulation = DirectDrawEmulationCheckBox.Checked;
-            bool _GP_DxWndEnabled = GP_DxWndRadioButton.Checked;
-            bool _GP_dxwnd = GP_DxWndRadioButton.Checked;
-            bool _GP_DxWndWindow = GP_DxWndWindowedCheckBox.Checked;
-            bool _GP_DxWndWindowFrame = GP_DxWndWindowBordersCheckBox.Checked;
-            bool dxDDEmulation = DxDirectDrawEmulationCheckBox.Checked;
-            int dxEmulationType = DxEmulationComboBox.SelectedIndex;
 
             return DomainController.Instance().saveSettings(
-                width,
-                height,
                 unitActionLines,
                 tooltips,
-                videoWindowed,
                 Backbuffer,
                 Intro,
                 CD,
@@ -210,25 +102,12 @@ namespace gui
                 voiceVolume,
                 soundVolume,
                 dragDistance,
-                _GP_IEddraw,
-                _GP_ddwrapper,
-                _GP_NoVideoMemory,
-                _GP_FakeVsync,
-                ddEmulation,
-                dxEmulationType,
-                _GP_TSDDraw,
-                _GP_dxwnd,
-                _GP_DxWndEnabled,
-                _GP_DxWndWindow,
-                _GP_DxWndWindowFrame,
-                dxDDEmulation,
                 procAffinity,
                 ColorOverrides,
                 OverrideColors,
                 OnlyRightClickDeselect,
                 DisableAltTab,
                 DisableEdgeScrolling,
-                IntegrateMumble,
                 TextBackgroundColor);
         }
 
@@ -288,87 +167,6 @@ namespace gui
             lblSoundVolumeValue.Text = trbSoundVolume.Value * 5 + "%";
         }
 
-        private void GP_ddwrapperRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            DirectDrawEmulationCheckBox.Enabled = GP_NoVideoMemoryCheckBox.Enabled = GP_FakeVsyncCheckBox.Enabled = GP_ddwrapperRadioButton.Checked;
-        }
-
-        private void lblWindowed_Click(object sender, EventArgs e)
-        {
-            chkWindowed.Checked = !chkWindowed.Checked;
-            chkWindowed.Select();
-        }
-
-        private void GP_DisabledLabel_Click(object sender, EventArgs e)
-        {
-            GP_DisabledRadioButton.Select();
-        }
-
-        private void GP_TSDDrawLabel_Click(object sender, EventArgs e)
-        {
-            GP_TSDDrawRadioButton.Select();
-        }
-
-        private void GP_IEddrawLabel_Click(object sender, EventArgs e)
-        {
-            GP_IEddrawRadioButton.Select();
-        }
-
-        private void GP_ddwrapperLabel_Click(object sender, EventArgs e)
-        {
-            GP_ddwrapperRadioButton.Select();
-        }
-
-        private void GP_DxWndLabel_Click(object sender, EventArgs e)
-        {
-            GP_DxWndRadioButton.Select();
-        }
-
-        private void GP_DxWndRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            DxEmulationComboBox.Enabled = DxDirectDrawEmulationCheckBox.Enabled = GP_DxWndWindowedCheckBox.Enabled = GP_DxWndWindowBordersCheckBox.Enabled = GP_DxWndRadioButton.Checked;
-            
-            chkWindowed.Enabled = !GP_DxWndRadioButton.Checked;
-            if (GP_DxWndRadioButton.Checked)
-                chkWindowed.Checked = false;
-        }
-
-
-        private void GP_TSDDrawRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            chkWindowed.Enabled = !GP_TSDDrawRadioButton.Checked;
-            if (GP_TSDDrawRadioButton.Checked)
-                chkWindowed.Checked = false;
-        }
-
-        private void GP_DxWndWinowedLabel_Click(object sender, EventArgs e)
-        {
-            if (GP_DxWndRadioButton.Checked)
-                GP_DxWndWindowedCheckBox.Checked = !GP_DxWndWindowedCheckBox.Checked;
-            GP_DxWndWindowedCheckBox.Select();
-        }
-
-        private void GP_DxWndWindowBordersLabel_Click(object sender, EventArgs e)
-        {
-            if (GP_DxWndRadioButton.Checked)
-                GP_DxWndWindowBordersCheckBox.Checked = !GP_DxWndWindowBordersCheckBox.Checked;
-            GP_DxWndWindowBordersCheckBox.Select();
-        }
-
-        private void GP_NoVideoMemoryLabel_Click(object sender, EventArgs e)
-        {
-            if (GP_ddwrapperRadioButton.Checked)
-                GP_NoVideoMemoryCheckBox.Checked = !GP_NoVideoMemoryCheckBox.Checked;
-            GP_NoVideoMemoryCheckBox.Select();
-        }
-
-        private void GP_FakeVsyncLabel_Click(object sender, EventArgs e)
-        {
-            if (GP_ddwrapperRadioButton.Checked)
-                GP_FakeVsyncCheckBox.Checked = !GP_FakeVsyncCheckBox.Checked;
-            GP_FakeVsyncCheckBox.Select();
-        }
-
         private void lblUseCustomColors_Click(object sender, EventArgs e)
         {
           chkUseCustomColors.Checked = !chkUseCustomColors.Checked;
@@ -395,12 +193,6 @@ namespace gui
                 if (d.BkgColor.Checked)
                     TextBackgroundColor = 12;
             }
-        }
-
-        private void chkWindowed_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!(DirectDrawEmulationCheckBox.Enabled = !chkWindowed.Checked))
-                DirectDrawEmulationCheckBox.Checked = false; 
         }
     }
 }

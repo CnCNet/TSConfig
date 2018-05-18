@@ -26,16 +26,5 @@ namespace tsconfig.persistence
         {
             File.WriteAllText(ProgramConstants.gamepath + ProgramConstants.GAME_SETTINGS, tsconfig.Properties.Resources.SUN_ini);
         }
-
-        public static void WriteddwrapperCfg()
-        {
-            File.WriteAllText(ProgramConstants.gamepath + ProgramConstants.DDWRAPPER_SETTINGS, tsconfig.Properties.Resources.aqrit);
-        }
-
-        public static void Writedxwnd_ini()
-        {
-            File.WriteAllText(ProgramConstants.gamepath + ProgramConstants.DXWND_SETTINGS, tsconfig.Properties.Resources.dxwnd_ini);
-        }
-
     }
 }
